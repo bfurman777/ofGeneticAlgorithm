@@ -1,4 +1,7 @@
-## GameTitle
+## Genetic Algorithm Simulator  
+A Genetic Algorithm is an algorithm that improves its model on a task after running many "generations" of simulations.  
+My proposed simulation is one where a computer-controlled "subject" is dot on a 2D playing field. The subject can 
+
 
 
 Genetic Algorithm with physics  
