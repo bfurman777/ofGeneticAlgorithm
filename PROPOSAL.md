@@ -13,5 +13,8 @@ Visually, the user will see the generations training. The user will also be able
 
 There will also be different playing fields, such as ones with obstacles to avoid.
 
+## Testing
+A mini-simulation will be made with fewer instructions. Unit tests will test that a subject closer to the goal has a higher fitness score, as well as if the fittest subject from the last generation exists in the next generation.
+
 ## Outside Library
 This project will use a physics library to apply forces to the subjects. The use of physics will create a better visual experience. This will be done with the ofxBox2d wrapper (https://github.com/vanderlin/ofxBox2d) on the Box2d library (https://github.com/erincatto/box2d).
