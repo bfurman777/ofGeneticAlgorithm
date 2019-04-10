@@ -14,4 +14,4 @@ Visually, the user will see the generations training. The user will also be able
 There will also be different playing fields, such as ones with obstacles to avoid.
 
 ## Outside Library
-This project will use a physics library to apply forces to the subjects. The use of physics will create a better visual experiance. This will be done with the ofxBox2d wrapper (https://github.com/vanderlin/ofxBox2d) on the Box2d library (https://github.com/erincatto/box2d).
+This project will use a physics library to apply forces to the subjects. The use of physics will create a better visual experience. This will be done with the ofxBox2d wrapper (https://github.com/vanderlin/ofxBox2d) on the Box2d library (https://github.com/erincatto/box2d).
