@@ -1,6 +1,9 @@
 
-4/9/2019:  
-Ran a ball-gravity physics simulation in C++
+4/13/19:
+- Having problems linking ofxBox2D to the final-project local project: the project doesn't recognize added source folders or addons folder
+
+4/9/19:  
+- Ran a ball-gravity physics simulation in C++
 
 
 
