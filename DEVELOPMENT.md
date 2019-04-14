@@ -4,9 +4,8 @@
 
 4/9/19:  
 - Ran a ball-gravity physics simulation in C++
-  
-  
-  
+
+
 FEATURES TO ADD:
 Genetic Algorithm with physics  
 Get from starting point to end point  
