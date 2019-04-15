@@ -1,6 +1,9 @@
 
+4/14/19:
+- After reimporting the project **4** times, and rearranging the filesystem, I fixed the linking error between ofxBox2D and the local project. It turns out importing the project through projectGenerator moves files out of the src directory. These files needed to be moved back manually.
+
 4/13/19:
-- Having problems linking ofxBox2D to the final-project local project: the project doesn't recognize added source folders or addons folder
+- I'm having problems linking ofxBox2D to the local project: the project doesn't recognize imported openframeworks, source or addon folders
 
 4/9/19:  
 - Ran a ball-gravity physics simulation in C++
