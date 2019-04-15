@@ -184,6 +184,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.cpp" />

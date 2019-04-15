@@ -4,9 +4,6 @@
     <ClCompile Include="src\ofApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp">
       <Filter>addons\ofxBox2d\src</Filter>
     </ClCompile>
@@ -171,6 +168,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp">
       <Filter>addons\ofxBox2d\libs\triangle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
