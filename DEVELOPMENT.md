@@ -18,3 +18,4 @@ Display each generation
 Speed up viewing  
 Toggle visuals for processing speed  
 Obstacles  
+Resize window
