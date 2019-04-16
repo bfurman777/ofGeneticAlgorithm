@@ -172,6 +172,9 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -215,6 +218,9 @@
     </Filter>
     <Filter Include="addons\ofxBox2d\libs\triangle">
       <UniqueIdentifier>{59DDA46B-31F2-D064-1590-F1FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{2aad5f1d-0845-4aaa-adf5-fb3276b8f2c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -416,5 +422,10 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include=".gitignore" />
+    <None Include="DEVELOPMENT.md" />
   </ItemGroup>
 </Project>
