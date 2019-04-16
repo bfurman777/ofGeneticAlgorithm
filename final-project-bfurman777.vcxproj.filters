@@ -427,5 +427,6 @@
     <None Include="README.md" />
     <None Include=".gitignore" />
     <None Include="DEVELOPMENT.md" />
+    <None Include="PROPOSAL.md" />
   </ItemGroup>
 </Project>
