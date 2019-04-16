@@ -175,6 +175,12 @@
     <ClCompile Include="test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="population.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="subject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -418,6 +424,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp">
       <Filter>addons\ofxBox2d\libs\triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="population.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="subject.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
