@@ -184,7 +184,6 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="population.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp" />
@@ -242,11 +241,11 @@
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Rope\b2Rope.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp" />
-    <ClCompile Include="subject.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="src\population.cpp" />
+    <ClCompile Include="src\subject.cpp" />
+    <ClCompile Include="test\test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="population.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.h" />
@@ -312,7 +311,8 @@
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\dpoint.hpp" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
-    <ClInclude Include="subject.h" />
+    <ClInclude Include="src\population.h" />
+    <ClInclude Include="src\subject.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

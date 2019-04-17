@@ -172,14 +172,14 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="src\population.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\subject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test.cpp">
       <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="population.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="subject.cpp">
-      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -425,10 +425,10 @@
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp">
       <Filter>addons\ofxBox2d\libs\triangle</Filter>
     </ClInclude>
-    <ClInclude Include="population.h">
+    <ClInclude Include="src\population.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="subject.h">
+    <ClInclude Include="src\subject.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
