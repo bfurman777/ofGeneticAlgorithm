@@ -313,6 +313,7 @@
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
     <ClInclude Include="src\population.h" />
     <ClInclude Include="src\subject.h" />
+    <ClInclude Include="test\Catch.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

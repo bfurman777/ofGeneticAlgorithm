@@ -431,6 +431,9 @@
     <ClInclude Include="src\subject.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="test\Catch.hpp">
+      <Filter>test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
