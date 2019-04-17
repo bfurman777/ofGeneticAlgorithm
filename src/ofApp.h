@@ -21,4 +21,4 @@ namespace geneticAlgorithm {
 		void keyPressed(int key);
 	};
 
-} // namespace geneticAlgorithmVisualizer
+}
