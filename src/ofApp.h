@@ -9,15 +9,15 @@ namespace geneticAlgorithm {
 		void reset();
 
 	public:
-		// Function used for one time setup
+		// Setup functions
 		void setup();
 		void initResources();
 
-		// Main event loop functions called on every frame
+		// Functions called every frame
 		void update();
 		void draw();
 
-		// Event driven functions, called on appropriate user action
+		// User action functions
 		void keyPressed(int key);
 	};
 
