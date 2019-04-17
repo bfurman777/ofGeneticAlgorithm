@@ -31,7 +31,7 @@ namespace geneticAlgorithm {
 		int angle;
 
 		Instruction() {	// Generate a random Instruction if no parameters.
-			srand(time(0)); 
+			srand(static_cast<unsigned>(time(0))); // Seed random with current time
 			force = rand() % kMaxForce + kMinForce + 1;
 			angle = rand() % kMaxAngle + kMinAngle + 1;
 		};
@@ -42,10 +42,15 @@ namespace geneticAlgorithm {
 	private:
 		Point position;
 		Instruction instructions[kNumberOfInstructions];
+		int moves_to_reach_goal;
+		float fitness;
 
 	public:
 		Subject();  // create a random subject
-		Subject(Subject parents[]);	// combining the Instructions from some parents into a single subject, with a chance to mutate
+		Subject(Subject parents[]);  // combining the Instructions from some parents into a single subject, with a chance to mutate
+		float DistanceToGoal();
+		void EvaluateFitness();  // calulate the fitness score, store it locally on this class object
+		int GetFitness();
 		Point *GetPosition();
 		Instruction *GetInstructions();
 	};
