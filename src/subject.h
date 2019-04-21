@@ -33,7 +33,6 @@ namespace geneticAlgorithm {
 		int angle;
 
 		Instruction() {	// Generate a random Instruction if no parameters.
-			srand(static_cast<unsigned>(time(0))); // Seed random with current time
 			force = rand() % kMaxForce + kMinForce + 1;
 			angle = rand() % kMaxAngle + kMinAngle + 1;
 		};

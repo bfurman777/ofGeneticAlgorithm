@@ -1,4 +1,7 @@
 #include "ofApp.h"
+#include "population.h"
+#include "subject.h"
+
 #include <iostream>
 
 using namespace geneticAlgorithm;
@@ -14,6 +17,8 @@ void geneticAlgorithmRunner::setup() {
 
 /* TODO Docs */
 void geneticAlgorithmRunner::update() {
+	Instruction instruc;
+	std::cout << " Angle: " << instruc.angle << " Force " << instruc.force << std::endl;
 	return;
 }
 
