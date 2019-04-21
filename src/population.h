@@ -5,8 +5,6 @@
 
 namespace geneticAlgorithm {
 
-	static const int kNumberOfSubjectsInPopulation = 25;
-
 	class Population {
 	private:
 		Subject subjects[kNumberOfSubjectsInPopulation];
