@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxBox2d.h"
+
 
 namespace geneticAlgorithm {
 
