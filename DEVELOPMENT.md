@@ -1,8 +1,8 @@
 **Week 2**
 
-| Date    | Notes  |
-| ------- | ------ |
-| 4/21/19 | //TODO |
+| Date    | Notes                                                        |
+| ------- | ------------------------------------------------------------ |
+| 4/21/19 | Finally fixed the ofxBox2D issue! Everything was imported successfully; I just needed to add the correct header file of ofxBox2d.h inside of ofApp.h. |
 
 **Week 1**
 
