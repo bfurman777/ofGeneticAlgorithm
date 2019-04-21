@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
+
 #include "../src/subject.h"
 #include "../src/population.h"
 
@@ -43,7 +44,7 @@ TEST_CASE("Test Instruction Struct") {
 	SECTION("== Operator Overload True") {
 		Instruction instruction1(77, 42);
 		Instruction instruction2(77, 42);
-		REQUIRE(instruction1 == instruction2);
+		REQUIRE((instruction1 == instruction2));
 	}
 	SECTION("== Operator Overload False") {
 		Instruction instruction1(77, 42);
@@ -53,7 +54,7 @@ TEST_CASE("Test Instruction Struct") {
 	SECTION("!= Operator Overload True") {
 		Instruction instruction1(88, 42);
 		Instruction instruction2(69, 37);
-		REQUIRE(instruction1 != instruction2);
+		REQUIRE((instruction1 != instruction2));
 	}
 	SECTION("!= Operator Overload False") {
 		Instruction instruction1(27, 76);
@@ -63,10 +64,14 @@ TEST_CASE("Test Instruction Struct") {
 	SECTION("Default Constructor is Random") {
 		// compare 3 random instructions, at least 2 should be different
 		Instruction instructs[3];
+		for (Instruction i : instructs) {
+			std::cout << i.force << std::endl;
+		}
+		Catch::cout() << "\n\n\n\nreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\n\n\n\n";
 		REQUIRE((
 			instructs[0] != instructs[1]
 			|| instructs[1] != instructs[2]
 			|| instructs[2] != instructs[0]
-		));
+			));
 	}
 }

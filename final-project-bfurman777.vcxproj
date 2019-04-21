@@ -239,8 +239,12 @@
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Rope\b2Rope.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\population.cpp" />
     <ClCompile Include="src\subject.cpp" />
     <ClCompile Include="test\test.cpp" />
@@ -310,10 +314,12 @@
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\dpoint.hpp" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
-    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\ofApp.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\population.h" />
     <ClInclude Include="src\subject.h" />
-    <ClInclude Include="test\Catch.hpp" />
+    <ClInclude Include="test\catch.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
