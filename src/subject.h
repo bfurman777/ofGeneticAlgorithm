@@ -36,6 +36,13 @@ namespace geneticAlgorithm {
 			angle = rand() % kMaxAngle + kMinAngle + 1;
 		};
 		Instruction(int force, int angle) : force(force), angle(angle) {};
+
+		bool operator==(const Instruction& other) {
+			return force == other.force && angle == other.angle;
+		}
+		bool operator!=(const Instruction& other) {
+			return !(*this == other);
+		}
 	};
 
 	class Subject {
