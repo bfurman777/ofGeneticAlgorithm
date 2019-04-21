@@ -2,7 +2,7 @@
 
 | Date    | Notes                                                        |
 | ------- | ------------------------------------------------------------ |
-| 4/21/19 | Finally fixed the ofxBox2D issue! Everything was imported successfully; I just needed to add the correct header file of ofxBox2d.h inside of ofApp.h. |
+| 4/21/19 | Finally fixed the ofxBox2D issue!!! Everything was imported successfully before - I just needed to add the correct header file of ofxBox2d.h inside of ofApp.h. Also, I implemented operator overloads for the Instruction struct. Added many test cases for the Point and Instruction structs, as well as helper functions. Catch2 would not run, but after some debugging, I figured out that you have to remove main.cpp, ofApp.cpp, and offApp.h from the project before running the tests. |
 
 **Week 1**
 
@@ -12,7 +12,7 @@
 | 4/16/19 | Created a high-level pseudocode outline of functions on OneNote (a screenshot was added to the git repo). Added all needed functions, structs, and classes to the header files in the project. Reorganized the filesystem. |
 | 4/14/19 | After reimporting the project 4 times, and rearranging the filesystem, I fixed the linking error between ofxBox2D and the local project. It turns out importing the project through projectGenerator moves files out of the src directory. These files needed to be moved back manually. |
 | 4/13/19 | I'm having problems linking ofxBox2D to the local project: the project doesn't recognize imported openframeworks, src or addon folders. I tried using the projectGenerator, moving the files manually, and copy-pasting files from a working project. |
-| 4/9/19  | Ran a ball-gravity physics example simulation in C++         |
+| 4/9/19  | Ran a ball-gravity physics example simulation in C++.        |
 
 
 
