@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\ofApp.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp">
       <Filter>addons\ofxBox2d\src</Filter>
     </ClCompile>
@@ -169,13 +166,16 @@
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp">
       <Filter>addons\ofxBox2d\libs\triangle</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\population.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\subject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="test\test.cpp">
@@ -230,9 +230,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ofApp.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.h">
       <Filter>addons\ofxBox2d\src</Filter>
     </ClInclude>
@@ -431,6 +428,9 @@
     <ClInclude Include="src\subject.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="test\Catch.hpp">
       <Filter>test</Filter>
     </ClInclude>
@@ -443,5 +443,8 @@
     <None Include=".gitignore" />
     <None Include="DEVELOPMENT.md" />
     <None Include="PROPOSAL.md" />
+    <None Include="test\tests.runsettings">
+      <Filter>test</Filter>
+    </None>
   </ItemGroup>
 </Project>
