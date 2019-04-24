@@ -12,14 +12,11 @@ void geneticAlgorithmRunner::setup() {
 
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
 
-	initResources();
+	InitResources();
 }
 
 /* TODO Docs */
 void geneticAlgorithmRunner::update() {
-	Instruction instruc;
-	std::cout << " Angle: " << instruc.angle << " Force " << instruc.force << std::endl;
-	return;
 }
 
 /* TODO Docs */
@@ -44,5 +41,13 @@ void geneticAlgorithmRunner::InitResources() {
 
 /* TODO Docs */
 void geneticAlgorithmRunner::InitBox2D() {
-	return;
+	ofSetVerticalSync(true);
+	ofBackgroundHex(0xfdefc2);
+	ofSetLogLevel(OF_LOG_NOTICE);
+
+	box2d.init();
+	box2d.setGravity(0, 10);
+	box2d.createBounds();
+	box2d.setFPS(60.0);
+	box2d.registerGrabbing();
 }

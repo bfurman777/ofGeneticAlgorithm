@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include <cmath>
 
 namespace geneticAlgorithm {
 
@@ -48,11 +49,11 @@ namespace geneticAlgorithm {
 
 	class Subject {
 	private:
-		Point position;
-		Instruction instructions[kNumberOfInstructions];
-		int moves_to_reach_goal;
-		float fitness;
-		bool is_dead;
+		Point position_;
+		Instruction instructions_[kNumberOfInstructions];
+		int moves_to_reach_goal_;
+		float fitness_;
+		bool is_dead_;
 
 	public:
 		Subject();  // create a random subject

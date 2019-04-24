@@ -7,9 +7,9 @@ namespace geneticAlgorithm {
 
 	class Population {
 	private:
-		Subject subjects[kNumberOfSubjectsInPopulation];
-		Subject *fittestSubject;
-		Subject *fittestFromOldGeneration;
+		Subject subjects_[kNumberOfSubjectsInPopulation];
+		Subject *fittestSubject_;
+		Subject *fittestFromOldGeneration_;
 
 	public:
 		void EvaluateFitness();  // evaluate all subjects and keep track of the fittest

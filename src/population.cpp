@@ -1,11 +1,14 @@
 #include "population.h"
 
-void EvaluateFitness() {
+namespace geneticAlgorithm {
+	void Population::EvaluateFitness() {
 
-}
-void NextGeneration() {
+	}
+	void Population::NextGeneration() {
+	}
+
+	Subject *Population::GetFittestSubject() {
+		return nullptr;
+	}
 }
 
-Subject *GetFittestSubject() {
-
-}

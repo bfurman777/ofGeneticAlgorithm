@@ -24,6 +24,9 @@ namespace geneticAlgorithm {
 		// Initialize things in setup
 		void InitResources();
 		void InitBox2D();
+
+		// Box2D vars
+		ofxBox2d box2d;   // the box2d world
 	};
 
 }
