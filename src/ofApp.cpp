@@ -7,8 +7,8 @@ void geneticAlgorithmRunner::setup() {
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
 	InitResources();
 	population = Population();
-	for (int i = 0; i < 5; i++) {
-		std::cout << population.GetSubjects()[0].GetPosition().x << '\n';
+	for (int i = 0; i < 77; i++) {
+		//std::cout << population.GetSubjects()[0].GetPosition().x << '\n';
 		population.EvalNextInstruction();
 	}
 }

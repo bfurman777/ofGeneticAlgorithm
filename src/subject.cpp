@@ -36,12 +36,11 @@ namespace geneticAlgorithm {
 		float angle_radians = angle_degrees / 180.0 * 3.14159;
 		float deltaX = force * std::cos(angle_radians);
 		float deltaY = force * std::sin(angle_radians);
-		std::cout << "Angle deg, rad: " << angle_degrees << ' ' << angle_radians << '\n';
-		//std::cout << "POS BEFORE: " << position_.x << ' ' << position_.y << '\n';
+		//std::cout << "Angle deg, rad: " << angle_degrees << ' ' << angle_radians << '\n';
+		std::cout << "POS BEFORE: " << position_.x << ' ' << position_.y << '\n';
 		//std::cout << "DELTAS: " << deltaX << ' ' << deltaY << '\n';
-		position_.x += static_cast<int>(std::round(deltaX));
-		position_.y += static_cast<int>(std::round(deltaY));
-		//std::cout << "POS AFTER: " << position_.x << ' ' << position_.y << '\n';
+		position_ = Point(position_.x + static_cast<int>(std::round(deltaX)), position_.y + static_cast<int>(std::round(deltaY)));
+		std::cout << "POS AFTER: " << position_.x << ' ' << position_.y << '\n';
 	}
 
 	float Subject::GetFitness() {
