@@ -27,6 +27,8 @@ namespace geneticAlgorithm {
 		if (reached_goal_) {
 			fitness_ += 1 / moves_to_reach_goal_;
 		}
+
+		return fitness_;
 	}
 
 	float Subject::GetFitness() {
