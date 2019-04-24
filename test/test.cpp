@@ -82,6 +82,22 @@ TEST_CASE("Test Subject Class") {
 		Subject strong_subject;
 		Point close_point(kGoalX - 15, kGoalY - 15);
 		strong_subject.SetPosition(close_point);
-		REQUIRE(weak_subject.EvaluateFitness() < strong_subject.EvaluateFitness());
+		REQUIRE(weak_subject.EvalFitness() < strong_subject.EvalFitness());
 	}
 }
+
+TEST_CASE("Test Population Class") {
+	SECTION("Fittest Subject") {
+		std::vector<Subject> subjects(2);
+		Point far_point(kGoalX - 50, kGoalY - 50);
+		subjects[0].SetPosition(far_point);
+		Point close_point(kGoalX - 15, kGoalY - 15);
+		subjects[1].SetPosition(close_point);
+		Population population(subjects);
+		REQUIRE(population.FittestSubjectIndex() == 1);
+	}
+}
+
+
+//TODO
+//Add test that best subject improves or stays the same
