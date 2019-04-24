@@ -17,6 +17,7 @@ void geneticAlgorithmRunner::setup() {
 
 /* TODO Docs */
 void geneticAlgorithmRunner::update() {
+
 }
 
 /* TODO Docs */
@@ -37,17 +38,4 @@ void geneticAlgorithmRunner::reset() {
 /* TODO Docs */
 void geneticAlgorithmRunner::InitResources() {
 	return;
-}
-
-/* TODO Docs */
-void geneticAlgorithmRunner::InitBox2D() {
-	ofSetVerticalSync(true);
-	ofBackgroundHex(0xfdefc2);
-	ofSetLogLevel(OF_LOG_NOTICE);
-
-	box2d.init();
-	box2d.setGravity(0, 10);
-	box2d.createBounds();
-	box2d.setFPS(60.0);
-	box2d.registerGrabbing();
 }
