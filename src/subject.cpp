@@ -39,7 +39,8 @@ namespace geneticAlgorithm {
 		//std::cout << "Angle deg, rad: " << angle_degrees << ' ' << angle_radians << '\n';
 		std::cout << "POS BEFORE: " << position_.x << ' ' << position_.y << '\n';
 		//std::cout << "DELTAS: " << deltaX << ' ' << deltaY << '\n';
-		position_ = Point(position_.x + static_cast<int>(std::round(deltaX)), position_.y + static_cast<int>(std::round(deltaY)));
+		position_.x += deltaX;
+		position_.y += deltaY;
 		std::cout << "POS AFTER: " << position_.x << ' ' << position_.y << '\n';
 	}
 

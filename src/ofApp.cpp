@@ -7,20 +7,16 @@ void geneticAlgorithmRunner::setup() {
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
 	InitResources();
 	population = Population();
-	for (int i = 0; i < 77; i++) {
-		//std::cout << population.GetSubjects()[0].GetPosition().x << '\n';
-		population.EvalNextInstruction();
-	}
 }
 
 void geneticAlgorithmRunner::update() {
-	
+	population.EvalNextInstruction();
 }
 
 void geneticAlgorithmRunner::draw() {
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
-	for (Subject subject : population.GetSubjects()) {
+	for (Subject& subject : population.GetSubjects()) {
 		ofDrawCircle(subject.GetPosition().x, subject.GetPosition().y, kSubjectRadius);
 	}
 	// green square representing the goal 

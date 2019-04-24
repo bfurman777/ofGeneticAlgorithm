@@ -19,7 +19,7 @@ namespace geneticAlgorithm {
 		if (current_instruction_ >= kNumberOfInstructions) {
 			return;
 		}
-		for (Subject subject : subjects_) {
+		for (Subject& subject : subjects_) {
 			subject.EvalInstruction(current_instruction_);
 		}
 		++current_instruction_;
