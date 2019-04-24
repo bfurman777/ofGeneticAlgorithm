@@ -27,8 +27,17 @@ namespace geneticAlgorithm {
 		if (reached_goal_) {
 			fitness_ += 1 / moves_to_reach_goal_;
 		}
-
 		return fitness_;
+	}
+
+	void Subject::EvalInstruction(int index) {
+		int force = instructions_[index].force;
+		int angle_degrees = instructions_[index].angle;
+		float angle_radians = angle_degrees / 180 * 3.14159;
+		float deltaX = force * std::cos(angle_radians);
+		float deltaY = force * std::sin(angle_radians);
+		position_.x += deltaX;
+		position_.y += deltaY;
 	}
 
 	float Subject::GetFitness() {
@@ -45,5 +54,9 @@ namespace geneticAlgorithm {
 
 	std::vector<Instruction> &Subject::GetInstructions() {
 		return instructions_;
+	}
+
+	void Subject::SetInstructions(const std::vector<Instruction> instructions) {
+		instructions_ = instructions;
 	}
 }

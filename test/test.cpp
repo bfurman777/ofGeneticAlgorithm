@@ -84,6 +84,15 @@ TEST_CASE("Test Subject Class") {
 		strong_subject.SetPosition(close_point);
 		REQUIRE(weak_subject.EvalFitness() < strong_subject.EvalFitness());
 	}
+	SECTION("EvalFunction updates Position") {
+		Subject subject;
+		Instruction instruction(1, 0);  // force 1 at 0 degrees (right 1 unit)
+		std::vector<Instruction> instructions{ instruction };
+		subject.SetInstructions(instructions);
+		subject.EvalInstruction(0);
+		REQUIRE(subject.GetPosition().x == kStartingX + 1);
+		REQUIRE(subject.GetPosition().y == kStartingY);
+	}
 }
 
 TEST_CASE("Test Population Class") {

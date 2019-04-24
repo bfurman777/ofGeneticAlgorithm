@@ -17,7 +17,7 @@ namespace geneticAlgorithm {
 	static const int kNumberOfInstructions = 500;
 	static const int kNumberOfSubjectsInPopulation = 25;
 	static const int kMinForce = 0;
-	static const int kMaxForce = 500;
+	static const int kMaxForce = 20;
 	static const int kMinAngle = 0;
 	static const int kMaxAngle = 360;
 	static const int kMutationChance = 0.05;
@@ -63,10 +63,12 @@ namespace geneticAlgorithm {
 		Subject(Subject parents[]);  // combining the Instructions from some parents into a single subject, with a chance to mutate
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
+		void EvalInstruction(int index);
 		float GetFitness();
 		Point &GetPosition();
 		void SetPosition(const Point &point);
 		std::vector<Instruction> &GetInstructions();
+		void SetInstructions(const std::vector<Instruction> instructions);
 	};
 
 }
