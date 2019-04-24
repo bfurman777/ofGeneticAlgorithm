@@ -21,7 +21,7 @@ namespace geneticAlgorithm {
 		return std::sqrt(deltaY * deltaY + deltaX * deltaX);
 	}
 
-	float Subject::EvaluateFitness() {
+	float Subject::EvalFitness() {
 		fitness_ = 0;
 		fitness_ += 1 / DistanceToGoal();
 		if (reached_goal_) {

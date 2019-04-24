@@ -61,7 +61,7 @@ namespace geneticAlgorithm {
 		Subject();  // create a random subject
 		Subject(Subject parents[]);  // combining the Instructions from some parents into a single subject, with a chance to mutate
 		float DistanceToGoal();
-		float EvaluateFitness();  // calulate the fitness score, store it locally on this class object
+		float EvalFitness();  // calulate the fitness score, store it locally on this class object
 		float GetFitness();
 		Point &GetPosition();
 		void SetPosition(const Point &point);
