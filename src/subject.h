@@ -55,13 +55,14 @@ namespace geneticAlgorithm {
 		int moves_to_reach_goal_;
 		float fitness_;
 		bool is_dead_;
+		bool reached_goal_;
 
 	public:
 		Subject();  // create a random subject
 		Subject(Subject parents[]);  // combining the Instructions from some parents into a single subject, with a chance to mutate
 		float DistanceToGoal();
-		void EvaluateFitness();  // calulate the fitness score, store it locally on this class object
-		int GetFitness();
+		float EvaluateFitness();  // calulate the fitness score, store it locally on this class object
+		float GetFitness();
 		Point &GetPosition();
 		void SetPosition(const Point &point);
 		std::vector<Instruction> &GetInstructions();
