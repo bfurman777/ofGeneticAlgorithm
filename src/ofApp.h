@@ -1,13 +1,17 @@
 #pragma once
 
 #include "ofMain.h"
+#include "population.h"
+#include "subject.h"
 
+#include <iostream>
 
 namespace geneticAlgorithm {
 
 	class geneticAlgorithmRunner : public ofBaseApp {
 	private:
 		void reset();
+		Population population;
 
 	public:
 		// Setup functions

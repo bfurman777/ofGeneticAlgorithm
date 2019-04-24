@@ -1,41 +1,34 @@
 #include "ofApp.h"
-#include "population.h"
-#include "subject.h"
-
-#include <iostream>
 
 using namespace geneticAlgorithm;
 
-// Setup method
 void geneticAlgorithmRunner::setup() {
+	std::cout << "W " << ofGetWindowWidth() << "   H " << ofGetWindowHeight() << '\n';
 	ofSetWindowTitle("Genetic Algorithm Simulator");
-
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
-
 	InitResources();
+	population = Population();
 }
 
-/* TODO Docs */
 void geneticAlgorithmRunner::update() {
 
 }
 
-/* TODO Docs */
 void geneticAlgorithmRunner::draw() {
-	return;
+	for (Subject subject : population.GetSubjects()) {
+		ofDrawCircle(subject.GetPosition().x, subject.GetPosition().y, kSubjectRadius);
+		//std::cout << subject.GetPosition().x << ' ' << subject.GetPosition().y << '\n';
+	}
 }
 
-/* TODO Docs */
 void geneticAlgorithmRunner::keyPressed(int key) {
 	return;
 }
 
-/* TODO Docs */
 void geneticAlgorithmRunner::reset() {
 	InitResources();
 }
 
-/* TODO Docs */
 void geneticAlgorithmRunner::InitResources() {
 	return;
 }

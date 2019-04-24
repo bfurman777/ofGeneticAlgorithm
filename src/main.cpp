@@ -6,6 +6,6 @@
 
 int main() {
 	ofSetupOpenGL(640, 480, DISPLAY_MODE);
-	ofSetFrameRate(16);
+	ofSetFrameRate(60);
 	ofRunApp(new geneticAlgorithm::geneticAlgorithmRunner());
 }

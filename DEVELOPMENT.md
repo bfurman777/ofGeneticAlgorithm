@@ -2,6 +2,7 @@
 
 | Date    | Notes                                                        |
 | ------- | ------------------------------------------------------------ |
+| 4/24/19 | Read Access Violation error in Box2D! After looking deeper into Box2D, I came to the conclusion to drop Box2D. It is too complicated for the physics task planned and I will not have enough time to finish the project if I continue with this library. Possible alternatives: JSON loading of simulations, JSON loading of settings, sound effects/music, and better graphics. |
 | 4/23/19 | Researched more specific examples of Box2D. Planned out how to use collision filtering to allow many subjects and increase efficiency.  Refactored some functions to work with a future Box2D implementation. |
 | 4/21/19 | Finally fixed the ofxBox2D issue!!! Everything was imported successfully before - I just needed to add the correct header file of ofxBox2d.h inside of ofApp.h. Also, I implemented operator overloads for the Instruction struct. Added many test cases for the Point and Instruction structs, as well as helper functions. Catch2 would not run, but after some debugging, I figured out that you have to remove main.cpp, ofApp.cpp, and ofApp.h from the project before running the tests. |
 
