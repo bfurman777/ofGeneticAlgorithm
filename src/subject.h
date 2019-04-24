@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <cmath>
+#include <vector>
 
 namespace geneticAlgorithm {
 
@@ -50,7 +51,7 @@ namespace geneticAlgorithm {
 	class Subject {
 	private:
 		Point position_;
-		Instruction instructions_[kNumberOfInstructions];
+		std::vector<Instruction> instructions_;
 		int moves_to_reach_goal_;
 		float fitness_;
 		bool is_dead_;
@@ -61,8 +62,9 @@ namespace geneticAlgorithm {
 		float DistanceToGoal();
 		void EvaluateFitness();  // calulate the fitness score, store it locally on this class object
 		int GetFitness();
-		Point *GetPosition();
-		Instruction *GetInstructions();
+		Point &GetPosition();
+		void SetPosition(const Point &point);
+		std::vector<Instruction> &GetInstructions();
 	};
 
 }
