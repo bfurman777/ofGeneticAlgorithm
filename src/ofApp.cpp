@@ -34,10 +34,15 @@ void geneticAlgorithmRunner::keyPressed(int key) {
 
 /* TODO Docs */
 void geneticAlgorithmRunner::reset() {
-	initResources();
+	InitResources();
 }
 
 /* TODO Docs */
-void geneticAlgorithmRunner::initResources() {
+void geneticAlgorithmRunner::InitResources() {
+	return;
+}
+
+/* TODO Docs */
+void geneticAlgorithmRunner::InitBox2D() {
 	return;
 }

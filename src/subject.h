@@ -52,6 +52,7 @@ namespace geneticAlgorithm {
 		Instruction instructions[kNumberOfInstructions];
 		int moves_to_reach_goal;
 		float fitness;
+		bool is_dead;
 
 	public:
 		Subject();  // create a random subject

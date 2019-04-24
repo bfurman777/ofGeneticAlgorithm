@@ -13,7 +13,6 @@ namespace geneticAlgorithm {
 	public:
 		// Setup functions
 		void setup();
-		void initResources();
 
 		// Functions called every frame
 		void update();
@@ -21,6 +20,10 @@ namespace geneticAlgorithm {
 
 		// User action functions
 		void keyPressed(int key);
+
+		// Initialize things in setup
+		void InitResources();
+		void InitBox2D();
 	};
 
 }

@@ -66,9 +66,7 @@ TEST_CASE("Test Instruction Struct") {
 		Instruction instructs[3];
 		for (Instruction i : instructs) {
 			std::cout << i.force << std::endl;
-		}
-		Catch::cout() << "\n\n\n\nreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\n\n\n\n";
-		REQUIRE((
+		}REQUIRE((
 			instructs[0] != instructs[1]
 			|| instructs[1] != instructs[2]
 			|| instructs[2] != instructs[0]
