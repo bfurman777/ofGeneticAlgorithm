@@ -22,5 +22,9 @@ namespace geneticAlgorithm {
 		}
 		return fittest_index;
 	}
+
+	std::vector<Subject> &Population::GetSubjects() {
+		return subjects_;
+	}
 }
 

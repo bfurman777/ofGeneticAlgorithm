@@ -9,18 +9,19 @@
 
 namespace geneticAlgorithm {
 
-	static const int kNumberOfSubjectsInPopulation = 25;
+
+	static const int kStartingX = 80;
+	static const int kStartingY = 240;
+	static const int kGoalX = 560;
+	static const int kGoalY = 240;
 	static const int kNumberOfInstructions = 500;
-	static const int kStartingX = 0;
-	static const int kStartingY = 0;
-	static const int kGoalX = 100;
-	static const int kGoalY = 100;
+	static const int kNumberOfSubjectsInPopulation = 25;
 	static const int kMinForce = 0;
 	static const int kMaxForce = 500;
 	static const int kMinAngle = 0;
 	static const int kMaxAngle = 360;
 	static const int kMutationChance = 0.05;
-	static const int kSubjectRadius = 7;
+	static const int kSubjectRadius = 11;
 
 	struct Point {
 		int x;
