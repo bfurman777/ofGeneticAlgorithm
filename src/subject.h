@@ -20,7 +20,7 @@ namespace geneticAlgorithm {
 	int kMinAngle = 0;
 	int kMaxAngle = 360;
 	int kMutationChance = 0.05;
-	int kSubjectRadius = 11; 
+	 int kSubjectRadius = 11; 
 
 	struct Point {
 		int x;

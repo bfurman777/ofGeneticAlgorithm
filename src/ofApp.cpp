@@ -39,8 +39,10 @@ void geneticAlgorithmRunner::reset() {
 
 //BROKEN
 void geneticAlgorithmRunner::InitConstants() {
+	/*
 	kStartingX = 42;
 	kStartingY = ofGetScreenHeight() / 2;
 	kGoalX = 560;
 	kGoalY = kStartingY;
+	//*/
 }

@@ -7,6 +7,20 @@
 #include <iostream>
 
 namespace geneticAlgorithm {
+	/*
+	int kStartingX = 80;
+	int kStartingY = 240;
+	int kGoalX = 560;
+	int kGoalY = 240;
+	int kNumberOfInstructions = 500;
+	int kNumberOfSubjectsInPopulation = 77;
+	int kMinForce = 0;
+	int kMaxForce = 20;
+	int kMinAngle = 0;
+	int kMaxAngle = 360;
+	int kMutationChance = 0.05;
+	int kSubjectRadius = 11;
+	//*/
 
 	class geneticAlgorithmRunner : public ofBaseApp {
 	private:
