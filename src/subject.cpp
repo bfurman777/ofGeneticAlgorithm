@@ -8,7 +8,9 @@ namespace geneticAlgorithm {
 		is_dead_ = false;
 		reached_goal_ = false;
 		instructions_ = std::vector<Instruction>(kNumberOfInstructions);
+		evaluated_path_ = std::vector<Point>(kNumberOfInstructions);
 		position_ = Point();
+		std::cout << kStartingX << '\n';
 	}
 
 	//TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -36,12 +38,8 @@ namespace geneticAlgorithm {
 		float angle_radians = angle_degrees / 180.0 * 3.14159;
 		float deltaX = force * std::cos(angle_radians);
 		float deltaY = force * std::sin(angle_radians);
-		//std::cout << "Angle deg, rad: " << angle_degrees << ' ' << angle_radians << '\n';
-		std::cout << "POS BEFORE: " << position_.x << ' ' << position_.y << '\n';
-		//std::cout << "DELTAS: " << deltaX << ' ' << deltaY << '\n';
 		position_.x += deltaX;
 		position_.y += deltaY;
-		std::cout << "POS AFTER: " << position_.x << ' ' << position_.y << '\n';
 	}
 
 	float Subject::GetFitness() {

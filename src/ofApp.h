@@ -14,7 +14,7 @@ namespace geneticAlgorithm {
 		Population population;
 
 	public:
-		// Setup functions
+		// Setup function
 		void setup();
 
 		// Functions called every frame
@@ -24,8 +24,8 @@ namespace geneticAlgorithm {
 		// User action functions
 		void keyPressed(int key);
 
-		// Initialize things in setup
-		void InitResources();
+		// Initialize steps in setup
+		void InitConstants();
 	};
 
 }

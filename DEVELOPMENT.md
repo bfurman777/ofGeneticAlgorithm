@@ -3,7 +3,7 @@
 | Date    | Notes                                                        |
 | ------- | ------------------------------------------------------------ |
 | 4/24/19 | Implemented the full Population and Subject class, with tests. The population organizes a group of random Subjects, who have their sets of instructions. These instructions can be evaluated to change the Subjects' positions each loop, but there is a bug where the position change gets dropped. After some time, fixed the bug by using references to the Subjects. I also got a Read Access Violation error in Box2D. After looking deeper into Box2D, I came to the conclusion to drop Box2D from the project. It is too complicated for the physics task planned and I will not have enough time to finish the project if I continue with this library. Possible alternatives: JSON loading of simulations, JSON loading of settings, sound effects/music, and better graphics. Currently, I have a single-generation simulation running without physics. |
-| 4/23/19 | Researched more specific examples of Box2D. Planned out how to use collision filtering to allow many subjects and increase efficiency.  Refactored some functions to work with a future Box2D implementation. |
+| 4/23/19 | Researched more specific examples of Box2D. Planned out how to use collision filtering to allow many subjects and increase efficiency.  Refactored some functions to work with a future Box2D implementation. Added some tests. |
 | 4/21/19 | Finally fixed the ofxBox2D issue!!! Everything was imported successfully before - I just needed to add the correct header file of ofxBox2d.h inside of ofApp.h. Also, I implemented operator overloads for the Instruction struct. Added many test cases for the Point and Instruction structs, as well as helper functions. Catch2 would not run, but after some debugging, I figured out that you have to remove main.cpp, ofApp.cpp, and ofApp.h from the project before running the tests. |
 
 **Week 1**
@@ -19,6 +19,10 @@
 
 
 **FEATURES TO ADD:**
+
+- Starting square image
+
+- Test full pop to reach goal
 
 - Genetic Algorithm with physics
 - Get from starting point to end point

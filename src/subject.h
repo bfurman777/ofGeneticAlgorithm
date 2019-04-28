@@ -9,19 +9,18 @@
 
 namespace geneticAlgorithm {
 
-
-	static const int kStartingX = 80;
-	static const int kStartingY = 240;
-	static const int kGoalX = 560;
-	static const int kGoalY = 240;
-	static const int kNumberOfInstructions = 500;
-	static const int kNumberOfSubjectsInPopulation = 7;
-	static const int kMinForce = 0;
-	static const int kMaxForce = 20;
-	static const int kMinAngle = 0;
-	static const int kMaxAngle = 360;
-	static const int kMutationChance = 0.05;
-	static const int kSubjectRadius = 11;
+	int kStartingX = 80;
+	int kStartingY = 240;
+	int kGoalX = 560;
+	int kGoalY = 240;
+	int kNumberOfInstructions = 500;
+	int kNumberOfSubjectsInPopulation = 77;
+	int kMinForce = 0;
+	int kMaxForce = 20;
+	int kMinAngle = 0;
+	int kMaxAngle = 360;
+	int kMutationChance = 0.05;
+	int kSubjectRadius = 11; 
 
 	struct Point {
 		int x;
@@ -53,6 +52,7 @@ namespace geneticAlgorithm {
 	private:
 		Point position_;
 		std::vector<Instruction> instructions_;
+		std::vector<Point> evaluated_path_;
 		int moves_to_reach_goal_;
 		float fitness_;
 		bool is_dead_;
