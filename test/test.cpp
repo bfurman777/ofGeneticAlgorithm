@@ -19,6 +19,12 @@ TEST_CASE("Test Point Struct") {
 		REQUIRE(point.x == 7);
 		REQUIRE(point.y == 3);
 	}
+	SECTION("Copy Constructor") {
+		Point point(66, 99);
+		Point copy(point);
+		REQUIRE(copy.x == 66);
+		REQUIRE(copy.y == 99);
+	}
 }
 
 TEST_CASE("Test Instruction Struct") {
