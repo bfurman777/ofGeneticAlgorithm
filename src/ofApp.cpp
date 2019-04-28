@@ -14,7 +14,7 @@ void geneticAlgorithmRunner::update() {
 }
 
 void geneticAlgorithmRunner::draw() {
-	// orange square representing the goal 
+	// orange square representing the start 
 	ofSetColor(255, 173, 58);
 	ofDrawRectangle(kStartingX - kSubjectRadius, kStartingY - kSubjectRadius, kSubjectRadius * 2, kSubjectRadius * 2);
 

@@ -16,6 +16,7 @@ namespace geneticAlgorithm {
 	}
 
 	void Population::EvalNextInstruction() {
+		/*
 		if (current_instruction_ >= kNumberOfInstructions) {
 			return;
 		}
@@ -23,6 +24,7 @@ namespace geneticAlgorithm {
 			subject.EvalInstruction(current_instruction_);
 		}
 		++current_instruction_;
+		//*/
 	}
 
 	int Population::FittestSubjectIndex() {

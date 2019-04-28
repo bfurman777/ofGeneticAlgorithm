@@ -9,18 +9,18 @@
 
 namespace geneticAlgorithm {
 
-	int kStartingX = 80;
-	int kStartingY = 240;
-	int kGoalX = 560;
-	int kGoalY = 240;
-	int kNumberOfInstructions = 500;
-	int kNumberOfSubjectsInPopulation = 77;
-	int kMinForce = 0;
-	int kMaxForce = 20;
-	int kMinAngle = 0;
-	int kMaxAngle = 360;
-	int kMutationChance = 0.05;
-	 int kSubjectRadius = 11; 
+	const int kStartingX = 80;
+	const int kStartingY = 240;
+	const int kGoalX = 560;
+	const int kGoalY = 240;
+	const int kNumberOfInstructions = 500;
+	const int kNumberOfSubjectsInPopulation = 77;
+	const int kMinForce = 0;
+	const int kMaxForce = 20;
+	const int kMinAngle = 0;
+	const int kMaxAngle = 360;
+	const int kMutationChance = 0.05;
+	const int kSubjectRadius = 11;
 
 	struct Point {
 		int x;
@@ -28,6 +28,7 @@ namespace geneticAlgorithm {
 
 		Point() : x(kStartingX), y(kStartingY) {};
 		Point(int x, int y) : x(x), y(y) {};
+		Point(const Point &to_copy) : x(to_copy.x), y(to_copy.y) {};
 	};
 
 	struct Instruction {
@@ -50,7 +51,7 @@ namespace geneticAlgorithm {
 
 	class Subject {
 	private:
-		Point position_;
+		Point current_position_;
 		std::vector<Instruction> instructions_;
 		std::vector<Point> evaluated_path_;
 		int moves_to_reach_goal_;
@@ -63,7 +64,7 @@ namespace geneticAlgorithm {
 		Subject(Subject parents[]);  // combining the Instructions from some parents into a single subject, with a chance to mutate
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
-		void EvalInstruction(int index);
+		std::vector<Point> &EvalInstructions();  // get the path of the subject for this generation
 		float GetFitness();
 		Point &GetPosition();
 		void SetPosition(const Point &point);

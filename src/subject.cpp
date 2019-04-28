@@ -8,9 +8,8 @@ namespace geneticAlgorithm {
 		is_dead_ = false;
 		reached_goal_ = false;
 		instructions_ = std::vector<Instruction>(kNumberOfInstructions);
-		evaluated_path_ = std::vector<Point>(kNumberOfInstructions);
-		position_ = Point();
-		std::cout << kStartingX << '\n';
+		evaluated_path_ = std::vector<Point>();
+		current_position_ = Point();
 	}
 
 	//TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -18,8 +17,8 @@ namespace geneticAlgorithm {
 	}
 
 	float Subject::DistanceToGoal() {
-		float deltaY = kGoalY - position_.y;
-		float deltaX = kGoalX - position_.x;
+		float deltaY = kGoalY - current_position_.y;
+		float deltaX = kGoalX - current_position_.x;
 		return std::sqrt(deltaY * deltaY + deltaX * deltaX);
 	}
 
@@ -32,14 +31,19 @@ namespace geneticAlgorithm {
 		return fitness_;
 	}
 
-	void Subject::EvalInstruction(int index) {
-		int force = instructions_[index].force;
-		int angle_degrees = instructions_[index].angle;
-		float angle_radians = angle_degrees / 180.0 * 3.14159;
-		float deltaX = force * std::cos(angle_radians);
-		float deltaY = force * std::sin(angle_radians);
-		position_.x += deltaX;
-		position_.y += deltaY;
+	std::vector<Point> &Subject::EvalInstructions() {
+		for (Instruction instruction : instructions_) {
+			int force = instruction.force;
+			int angle_degrees = instruction.angle;
+			float angle_radians = angle_degrees / 180.0 * 3.14159;
+			float deltaX = force * std::cos(angle_radians);
+			float deltaY = force * std::sin(angle_radians);
+			current_position_.x += deltaX;
+			current_position_.y += deltaY;
+			evaluated_path_.push_back(Point(current_position_));
+		}
+
+		return evaluated_path_;
 	}
 
 	float Subject::GetFitness() {
@@ -47,11 +51,11 @@ namespace geneticAlgorithm {
 	}
 
 	Point &Subject::GetPosition() {
-		return position_;
+		return current_position_;
 	}
 
 	void Subject::SetPosition(const Point &point) {
-		position_ = point;
+		current_position_ = point;
 	}
 
 	std::vector<Instruction> &Subject::GetInstructions() {
