@@ -33,6 +33,7 @@ namespace geneticAlgorithm {
 	}
 
 	std::vector<Point> &Subject::EvalInstructions() {
+		evaluated_path_ = std::vector<Point>();
 		for (Instruction instruction : instructions_) {
 			int force = instruction.force;
 			int angle_degrees = instruction.angle;

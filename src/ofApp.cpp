@@ -7,10 +7,12 @@ void geneticAlgorithmRunner::setup() {
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
 	InitConstants();
 	population = Population();
+	population.EvalGeneration();
 }
 
 void geneticAlgorithmRunner::update() {
-	population.EvalNextInstruction();
+	population.GetNextPoints();
+	std::this_thread::sleep_for(std::chrono::milliseconds(777));
 }
 
 void geneticAlgorithmRunner::draw() {

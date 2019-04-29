@@ -5,6 +5,8 @@
 #include "subject.h"
 
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 namespace geneticAlgorithm {
 	/*
