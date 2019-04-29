@@ -56,6 +56,7 @@ namespace geneticAlgorithm {
 		std::vector<Point> evaluated_path_;
 		bool is_dead_;
 		bool reached_goal_;
+		int step_to_reach_goal_;
 
 	public:
 		Subject();  // create a random subject
