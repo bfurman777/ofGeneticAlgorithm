@@ -5,6 +5,9 @@
 #include "subject.h"
 
 #include <iostream>
+#include <chrono>
+#include <thread>
+#include <vector>
 
 namespace geneticAlgorithm {
 	/*
@@ -25,7 +28,9 @@ namespace geneticAlgorithm {
 	class geneticAlgorithmRunner : public ofBaseApp {
 	private:
 		void reset();
-		Population population;
+		Population population_;
+		int instruction_index_;
+		std::vector<std::vector<Point>> subject_locations_to_draw_;  // the current frame's generation of subjects to draw
 
 	public:
 		// Setup function
@@ -37,9 +42,6 @@ namespace geneticAlgorithm {
 
 		// User action functions
 		void keyPressed(int key);
-
-		// Initialize steps in setup
-		void InitConstants();
 	};
 
 }

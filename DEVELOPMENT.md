@@ -1,3 +1,10 @@
+**Week 3**
+
+|         |                                                              |
+| ------- | ------------------------------------------------------------ |
+|         |                                                              |
+| 4/28/19 | Refactored code to work with pre-processing. Now a Generation can be viewed quickly with a variable delay between frames. However, there is a memory access violation at the end of a generation, where I got stuck debugging. |
+
 **Week 2**
 
 | Date    | Notes                                                        |
