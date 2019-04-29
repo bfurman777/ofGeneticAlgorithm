@@ -71,4 +71,11 @@ namespace geneticAlgorithm {
 	void Subject::SetInstructions(const std::vector<Instruction> instructions) {
 		instructions_ = instructions;
 	}
+
+	Point &Subject::GetEvaluatedPointAt(int i) {
+		if (evaluated_path_.size() == 0) {
+			EvalInstructions();
+		}
+		return evaluated_path_[i];
+	}
 }

@@ -67,6 +67,7 @@ namespace geneticAlgorithm {
 		Point &GetPosition();
 		void SetPosition(const Point &point);
 		std::vector<Instruction> &GetInstructions();
+		Point &GetEvaluatedPointAt(int i);
 		void SetInstructions(const std::vector<Instruction> instructions);
 	};
 
