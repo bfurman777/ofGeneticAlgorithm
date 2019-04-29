@@ -91,15 +91,23 @@ TEST_CASE("Test Subject Class") {
 		REQUIRE(weak_subject.EvalFitness() < strong_subject.EvalFitness());
 	}
 	SECTION("EvalFunction updates Position") {
-		/*
 		Subject subject;
 		Instruction instruction(1, 0);  // force 1 at 0 degrees (right 1 unit)
 		std::vector<Instruction> instructions{ instruction };
 		subject.SetInstructions(instructions);
-		subject.EvalInstruction(0);
+		subject.EvalInstructions();
 		REQUIRE(subject.GetPosition().x == kStartingX + 1);
 		REQUIRE(subject.GetPosition().y == kStartingY);
-		//*/
+	}
+	SECTION("EvalFunction returns a plausable path") {
+		// make sure the subject moves throughout the path
+		// this may not pass if the Subject is running in circles
+		Subject subject;
+		std::vector<Point> path = subject.EvalInstructions();
+		Point previous = path[0];
+		for (int i = 1; i < path.size(); i+=5) {
+			REQUIRE((path[i].x != previous.x || path[i].y != previous.y));
+		}
 	}
 }
 
