@@ -4,6 +4,7 @@ namespace geneticAlgorithm {
 	Population::Population() {
 		subjects_ = std::vector<Subject>(kNumberOfSubjectsInPopulation);
 		current_instruction_ = 0;
+		generation_number_ = 0;
 	}
 
 	Population::Population(std::vector<Subject> new_subjects) {
@@ -13,6 +14,14 @@ namespace geneticAlgorithm {
 
 	void Population::NextGeneration() {
 		current_instruction_ = 0;
+		Subject fittest_subject = subjects_[FittestSubjectIndex()];
+		subjects_ = std::vector<Subject>();
+		subjects_.push_back(fittest_subject);
+		for (int i = 1; i < kNumberOfSubjectsInPopulation; ++i) {
+			std::vector<Subject> parents;
+			parents.push_back(fittest_subject);
+			subjects_.push_back(Subject(parents));
+		}
 		EvalInstructions();
 	}
 

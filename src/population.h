@@ -11,6 +11,7 @@ namespace geneticAlgorithm {
 	private:
 		std::vector<Subject> subjects_;
 		int current_instruction_;
+		int generation_number_;
 
 	public:
 		Population();  // create a random population

@@ -10,7 +10,7 @@ void geneticAlgorithmRunner::setup() {
 }
 
 void geneticAlgorithmRunner::update() {
-
+	points_to_draw = population_.GetPointsAtNextFrame();
 }
 
 void geneticAlgorithmRunner::draw() {
@@ -24,11 +24,14 @@ void geneticAlgorithmRunner::draw() {
 
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
-	for (Point point : population_.GetPointsAtNextFrame()) {
+	for (Point point : points_to_draw) {
 		ofDrawCircle(point.x, point.y, kSubjectRadius);
 	}
+	// dark blue circle representing fittest subject from last generation
+	ofSetColor(0, 0, 255);
+	ofDrawCircle(points_to_draw[0].x, points_to_draw[0].y, kSubjectRadius);
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {
-	return;
+	population_.NextGeneration();
 }
