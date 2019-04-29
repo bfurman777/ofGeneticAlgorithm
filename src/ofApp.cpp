@@ -5,10 +5,8 @@ using namespace geneticAlgorithm;
 void geneticAlgorithmRunner::setup() {
 	ofSetWindowTitle("Genetic Algorithm Simulator");
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
-	InitConstants();
-	population = Population();
-	population.EvalInstructions();
-	
+	population_ = Population();
+	population_.EvalInstructions();
 }
 
 void geneticAlgorithmRunner::update() {
@@ -26,25 +24,11 @@ void geneticAlgorithmRunner::draw() {
 
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
-	for (Point point : population.GetPointsAtNextFrame()) {
+	for (Point point : population_.GetPointsAtNextFrame()) {
 		ofDrawCircle(point.x, point.y, kSubjectRadius);
 	}
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {
 	return;
-}
-
-void geneticAlgorithmRunner::reset() {
-
-}
-
-//BROKEN
-void geneticAlgorithmRunner::InitConstants() {
-	/*
-	kStartingX = 42;
-	kStartingY = ofGetScreenHeight() / 2;
-	kGoalX = 560;
-	kGoalY = kStartingY;
-	//*/
 }
