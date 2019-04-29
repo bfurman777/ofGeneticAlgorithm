@@ -54,8 +54,6 @@ namespace geneticAlgorithm {
 		Point current_position_;
 		std::vector<Instruction> instructions_;
 		std::vector<Point> evaluated_path_;
-		int moves_to_reach_goal_;
-		float fitness_;
 		bool is_dead_;
 		bool reached_goal_;
 
@@ -65,7 +63,6 @@ namespace geneticAlgorithm {
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
 		std::vector<Point> &EvalInstructions();  // get the path of the subject for this generation
-		float GetFitness();
 		Point &GetPosition();
 		void SetPosition(const Point &point);
 		std::vector<Instruction> &GetInstructions();

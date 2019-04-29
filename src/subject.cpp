@@ -3,8 +3,6 @@
 namespace geneticAlgorithm {
 
 	Subject::Subject() {
-		moves_to_reach_goal_ = -1;
-		fitness_ = 0;
 		is_dead_ = false;
 		reached_goal_ = false;
 		instructions_ = std::vector<Instruction>(kNumberOfInstructions);
@@ -23,12 +21,15 @@ namespace geneticAlgorithm {
 	}
 
 	float Subject::EvalFitness() {
-		fitness_ = 0;
-		fitness_ += 1 / DistanceToGoal();
-		if (reached_goal_) {
-			fitness_ += 1 / moves_to_reach_goal_;
+		if (evaluated_path_.size() == 0) {
+			EvalInstructions();
 		}
-		return fitness_;
+		float fitness = 0;
+		fitness += 1 / DistanceToGoal();  // closer to goal = more steps
+		if (reached_goal_) {  // less steps = more score
+			fitness += 1 / evaluated_path_.size();
+		}
+		return fitness;
 	}
 
 	std::vector<Point> &Subject::EvalInstructions() {
@@ -41,13 +42,13 @@ namespace geneticAlgorithm {
 			current_position_.x += deltaX;
 			current_position_.y += deltaY;
 			evaluated_path_.push_back(Point(current_position_));
+			if (DistanceToGoal() < kSubjectRadius) {
+				reached_goal_ = true;
+				break;
+			}
 		}
 
 		return evaluated_path_;
-	}
-
-	float Subject::GetFitness() {
-		return fitness_;
 	}
 
 	Point &Subject::GetPosition() {
