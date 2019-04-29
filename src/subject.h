@@ -14,7 +14,7 @@ namespace geneticAlgorithm {
 	const int kGoalX = 560;
 	const int kGoalY = 240;
 	const int kNumberOfInstructions = 500;
-	const int kNumberOfSubjectsInPopulation = 77;
+	const int kNumberOfSubjectsInPopulation = 2;
 	const int kMinForce = 0;
 	const int kMaxForce = 20;
 	const int kMinAngle = 0;
@@ -40,11 +40,12 @@ namespace geneticAlgorithm {
 			angle = rand() % kMaxAngle + kMinAngle + 1;
 		};
 		Instruction(int force, int angle) : force(force), angle(angle) {};
+		Instruction(const Instruction &to_copy) : force(to_copy.force), angle(to_copy.angle) {};
 
-		bool operator==(const Instruction& other) {
+		bool operator==(const Instruction &other) {
 			return force == other.force && angle == other.angle;
 		}
-		bool operator!=(const Instruction& other) {
+		bool operator!=(const Instruction &other) {
 			return !(*this == other);
 		}
 	};
@@ -56,6 +57,7 @@ namespace geneticAlgorithm {
 		std::vector<Point> evaluated_path_;
 		bool is_dead_;
 		bool reached_goal_;
+		int instructions_to_reach_goal_;
 
 	public:
 		Subject();  // create a random subject

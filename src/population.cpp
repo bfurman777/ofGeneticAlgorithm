@@ -15,24 +15,15 @@ namespace geneticAlgorithm {
 
 	}
 
-	void Population::EvalGeneration() {
+	std::vector<std::vector<Point>> Population::EvalGeneration() {
+		std::vector<std::vector<Point>> generation_points;
 		for (Subject& subject : subjects_) {
-			subject.EvalInstructions();
+			generation_points.push_back(subject.EvalInstructions());
 		}
+		return generation_points;
 	}
 
-	std::vector<Point> &Population::GetNextPoints() {
-		if (current_instruction_ >= kNumberOfInstructions) {
-			NextGeneration();
-			return std::vector<Point>{};
-		}
-		std::vector<Point> points;
-		for (Subject &subject : subjects_) {
-			points.push_back(Point(subject.GetPosition()));
-		}
-		++current_instruction_;
-		return points;
-	}
+
 
 	int Population::FittestSubjectIndex() {
 		int fittest_index = 0;

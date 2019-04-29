@@ -5,14 +5,21 @@ using namespace geneticAlgorithm;
 void geneticAlgorithmRunner::setup() {
 	ofSetWindowTitle("Genetic Algorithm Simulator");
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
-	InitConstants();
-	population = Population();
-	population.EvalGeneration();
+	population_ = Population();
+	instruction_index_ = -1;
+	subject_locations_to_draw_ = population_.EvalGeneration();
+	//for (auto v : subject_locations_to_draw_) {
+	//	std::cout << v.size();
+	//}
 }
 
 void geneticAlgorithmRunner::update() {
-	population.GetNextPoints();
-	std::this_thread::sleep_for(std::chrono::milliseconds(777));
+	if (instruction_index_ >= kNumberOfInstructions) {
+		population_.NextGeneration();
+		return;
+	}
+	++instruction_index_;
+	std::this_thread::sleep_for(std::chrono::milliseconds(7));
 }
 
 void geneticAlgorithmRunner::draw() {
@@ -26,8 +33,9 @@ void geneticAlgorithmRunner::draw() {
 
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
-	for (Subject& subject : population.GetSubjects()) {
-		ofDrawCircle(subject.GetPosition().x, subject.GetPosition().y, kSubjectRadius);
+	for (Point& subject_location : subject_locations_to_draw_[instruction_index_]) {
+		std::cout << subject_location.x << '\n';
+		//ofDrawCircle(subject_location.x, subject_location.y, kSubjectRadius);
 	}
 }
 
@@ -37,14 +45,4 @@ void geneticAlgorithmRunner::keyPressed(int key) {
 
 void geneticAlgorithmRunner::reset() {
 
-}
-
-//BROKEN
-void geneticAlgorithmRunner::InitConstants() {
-	/*
-	kStartingX = 42;
-	kStartingY = ofGetScreenHeight() / 2;
-	kGoalX = 560;
-	kGoalY = kStartingY;
-	//*/
 }
