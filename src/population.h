@@ -16,7 +16,7 @@ namespace geneticAlgorithm {
 		Population();  // create a random population
 		Population(std::vector<Subject> new_subjects);  // create a population from a vector of subjects
 		void NextGeneration();  // keep this fittestSubject in the first index of the next subjects_ vector, make new subjects by combining highly ranked subjects from this generation
-		void EvalNextInstruction();  // between frames, evaluate the next instruction to show
+		void EvalInstructions();  // between frames, evaluate the next instruction to show
 		int FittestSubjectIndex();
 		std::vector<Subject> &GetSubjects();
 	};

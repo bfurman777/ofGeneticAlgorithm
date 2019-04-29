@@ -15,16 +15,17 @@ namespace geneticAlgorithm {
 
 	}
 
-	void Population::EvalNextInstruction() {
-		/*
+	void Population::EvalInstructions() {
 		if (current_instruction_ >= kNumberOfInstructions) {
 			return;
 		}
 		for (Subject& subject : subjects_) {
-			subject.EvalInstruction(current_instruction_);
+			std::cout << std::endl;
+			for (Point p : subject.EvalInstructions()) {
+				std::cout << p.x << ' ';
+			}
 		}
 		++current_instruction_;
-		//*/
 	}
 
 	int Population::FittestSubjectIndex() {

@@ -7,10 +7,12 @@ void geneticAlgorithmRunner::setup() {
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
 	InitConstants();
 	population = Population();
+	population.EvalInstructions();
+	
 }
 
 void geneticAlgorithmRunner::update() {
-	population.EvalNextInstruction();
+
 }
 
 void geneticAlgorithmRunner::draw() {
@@ -24,9 +26,9 @@ void geneticAlgorithmRunner::draw() {
 
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
-	for (Subject& subject : population.GetSubjects()) {
-		ofDrawCircle(subject.GetPosition().x, subject.GetPosition().y, kSubjectRadius);
-	}
+	//for (Subject& subject : population.GetSubjects()) {
+		//ofDrawCircle(subject.GetPosition().x, subject.GetPosition().y, kSubjectRadius);
+	//}
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {
