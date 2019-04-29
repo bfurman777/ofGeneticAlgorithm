@@ -12,7 +12,8 @@ namespace geneticAlgorithm {
 	}
 
 	void Population::NextGeneration() {
-
+		current_instruction_ = 0;
+		EvalInstructions();
 	}
 
 	void Population::EvalInstructions() {
@@ -20,12 +21,22 @@ namespace geneticAlgorithm {
 			return;
 		}
 		for (Subject& subject : subjects_) {
-			std::cout << std::endl;
-			for (Point p : subject.EvalInstructions()) {
-				std::cout << p.x << ' ';
-			}
+			subject.EvalInstructions();
 		}
 		++current_instruction_;
+	}
+
+	std::vector<Point> Population::GetPointsAtNextFrame() {
+		if (current_instruction_ >= kNumberOfInstructions) {
+			std::cout << "next generation time" << std::endl;
+			NextGeneration();
+		}
+		std::vector<Point> next_points_to_show;
+		for (Subject& subject : subjects_) {
+			next_points_to_show.push_back(subject.GetEvaluatedPointAt(current_instruction_));
+		}
+		++current_instruction_;
+		return next_points_to_show;
 	}
 
 	int Population::FittestSubjectIndex() {

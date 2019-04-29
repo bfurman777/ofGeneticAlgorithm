@@ -108,6 +108,7 @@ TEST_CASE("Test Subject Class") {
 		for (int i = 1; i < path.size(); i+=5) {
 			REQUIRE((path[i].x != previous.x || path[i].y != previous.y));
 		}
+		
 	}
 }
 

@@ -26,9 +26,9 @@ void geneticAlgorithmRunner::draw() {
 
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
-	//for (Subject& subject : population.GetSubjects()) {
-		//ofDrawCircle(subject.GetPosition().x, subject.GetPosition().y, kSubjectRadius);
-	//}
+	for (Point point : population.GetPointsAtNextFrame()) {
+		ofDrawCircle(point.x, point.y, kSubjectRadius);
+	}
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {
