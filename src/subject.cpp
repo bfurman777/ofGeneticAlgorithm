@@ -11,8 +11,22 @@ namespace geneticAlgorithm {
 		step_to_reach_goal_ = 0;
 	}
 
-	//TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	Subject::Subject(Subject parents[]) {
+	Subject::Subject(std::vector<Subject> parents) {
+		is_dead_ = false;
+		reached_goal_ = false;
+		instructions_ = std::vector<Instruction>();
+		evaluated_path_ = std::vector<Point>();
+		current_position_ = Point();
+		step_to_reach_goal_ = 0;
+
+		for (int i = 0; i < kNumberOfInstructions; ++i) {
+			// chose a random parent's instructions, or a small chance to randomize the instruction
+			if (rand() % 100 <= kMutationChance) {
+				instructions_.push_back(Instruction());
+			}
+			int parent_chosen = rand() % parents.size();
+			instructions_.push_back(parents[parent_chosen].instructions_[i]);
+		}
 	}
 
 	float Subject::DistanceToGoal() {

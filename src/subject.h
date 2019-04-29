@@ -19,7 +19,7 @@ namespace geneticAlgorithm {
 	const int kMaxForce = 20;
 	const int kMinAngle = 0;
 	const int kMaxAngle = 360;
-	const int kMutationChance = 0.05;
+	const int kMutationChance = 5;  // percent
 	const int kSubjectRadius = 11;
 
 	struct Point {
@@ -60,7 +60,7 @@ namespace geneticAlgorithm {
 
 	public:
 		Subject();  // create a random subject
-		Subject(Subject parents[]);  // combining the Instructions from some parents into a single subject, with a chance to mutate
+		Subject(std::vector<Subject> parents);  // combining the Instructions from some parents into a single subject, with a chance to mutate
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
 		std::vector<Point> &EvalInstructions();  // get the path of the subject for this generation
