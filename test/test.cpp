@@ -81,15 +81,6 @@ TEST_CASE("Test Subject Class") {
 		subject.SetPosition(point);
 		REQUIRE(subject.DistanceToGoal() == 5);
 	}
-	SECTION("Closer Subject to Goal has Higher Fitness Score") {
-		Subject weak_subject;
-		Point far_point(kGoalX - 50, kGoalY - 50);
-		weak_subject.SetPosition(far_point);
-		Subject strong_subject;
-		Point close_point(kGoalX - 15, kGoalY - 15);
-		strong_subject.SetPosition(close_point);
-		REQUIRE(weak_subject.EvalFitness() < strong_subject.EvalFitness());
-	}
 	SECTION("EvalFunction updates Position") {
 		Subject subject;
 		Instruction instruction(1, 0);  // force 1 at 0 degrees (right 1 unit)
