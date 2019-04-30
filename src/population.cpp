@@ -24,7 +24,7 @@ namespace geneticAlgorithm {
 		}
 		current_instruction_ = 0;
 		++generation_number_;
-		std::this_thread::sleep_for(std::chrono::milliseconds(1777));
+		std::this_thread::sleep_for(std::chrono::milliseconds(77));
 		std::cout << "next generation time: " << generation_number_ << std::endl;
 		EvalInstructions();
 	}

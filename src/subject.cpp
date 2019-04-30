@@ -49,10 +49,11 @@ namespace geneticAlgorithm {
 			EvalInstructions();
 		}
 		float fitness = 0;
-		fitness += kDistanceScalar / DistanceToGoal();  // closer to goal = higher score
 		if (reached_goal_) {  
-			fitness *= kReachedGoalScalar;  // reaching goal scales your fitness up
 			fitness += kNumberOfStepsScalar / steps_to_reach_goal_;  // less steps = more score
+		}
+		else {
+			fitness += kDistanceScalar / DistanceToGoal();  // closer to goal = higher score
 		}
 		return fitness;
 	}
@@ -77,8 +78,6 @@ namespace geneticAlgorithm {
 			++steps_to_reach_goal_;
 			if (DistanceToGoal() < kSubjectRadius) {
 				reached_goal_ = true;
-				current_position_.x = kGoalX;
-				current_position_.y = kGoalY;
 			}
 		}
 		return evaluated_path_;

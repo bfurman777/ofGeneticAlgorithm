@@ -29,8 +29,7 @@ namespace geneticAlgorithm {
 
 	// fitness constants
 	const float kDistanceScalar = 1.5;
-	const float kNumberOfStepsScalar = 1000;
-	const float kReachedGoalScalar = 10;
+	const float kNumberOfStepsScalar = 10000;
 
 	struct Point {
 		int x;
