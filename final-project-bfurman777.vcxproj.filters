@@ -63,6 +63,9 @@
     <Filter Include="test">
       <UniqueIdentifier>{ce4cc167-c73f-438b-a38a-332ec566c231}</UniqueIdentifier>
     </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{ae019bec-039c-4b43-bb9d-a797e0d3258f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -102,6 +105,12 @@
   <ItemGroup>
     <None Include="test\tests.runsettings">
       <Filter>test</Filter>
+    </None>
+    <None Include="bin\data\3BigGuys.json">
+      <Filter>res</Filter>
+    </None>
+    <None Include="bin\data\basicLevel.json">
+      <Filter>res</Filter>
     </None>
   </ItemGroup>
 </Project>

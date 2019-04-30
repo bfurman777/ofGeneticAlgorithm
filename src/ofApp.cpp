@@ -5,6 +5,7 @@ using namespace geneticAlgorithm;
 void geneticAlgorithmRunner::setup() {
 	ofSetWindowTitle("Genetic Algorithm Simulator");
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
+	SetConstants(ParseJSON("3BigGuys.json"));
 	population_ = Population();
 	population_.EvalInstructions();
 }
@@ -39,4 +40,59 @@ void geneticAlgorithmRunner::draw() {
 
 void geneticAlgorithmRunner::keyPressed(int key) {
 	population_.NextGeneration();
+}
+
+ofxJSONElement geneticAlgorithmRunner::ParseJSON(std::string file) {
+	ofxJSONElement result;
+	if (result.open(file)) {
+		std::cout << result.getRawString() << std::endl;
+		return result;
+	} else {
+		return ofxJSONElement();
+	}
+}
+
+void geneticAlgorithmRunner::SetConstants(const ofxJSONElement &json) {
+	if (!json["kNumberOfInstructions"].empty()) {
+		kNumberOfInstructions = json["kNumberOfInstructions"].asInt();
+	}
+	if (!json["kNumberOfSubjectsInPopulation"].empty()) {
+		kNumberOfSubjectsInPopulation = json["kNumberOfSubjectsInPopulation"].asInt();
+	}
+	if (!json["kMutationChance"].empty()) {
+		kMutationChance = json["kMutationChance"].asInt();
+	}
+	if (!json["kStartingX"].empty()) {
+		kStartingX = json["kStartingX"].asInt();
+	}
+	if (!json["kStartingY"].empty()) {
+		kStartingY = json["kStartingY"].asInt();
+	}
+	if (!json["kGoalX"].empty()) {
+		kGoalX = json["kGoalX"].asInt();
+	}
+	if (!json["kGoalY"].empty()) {
+		kGoalY = json["kGoalY"].asInt();
+	}
+	if (!json["kSubjectRadius"].empty()) {
+		kSubjectRadius = json["kSubjectRadius"].asInt();
+	}
+	if (!json["kMinForce"].empty()) {
+		kMinForce = json["kMinForce"].asInt();
+	}
+	if (!json["kMaxForce"].empty()) {
+		kMaxForce = json["kMaxForce"].asInt();
+	}
+	if (!json["kMinAngle"].empty()) {
+		kMinAngle = json["kMinAngle"].asInt();
+	}
+	if (!json["kMaxAngle"].empty()) {
+		kMaxAngle = json["kMaxAngle"].asInt();
+	}
+	if (!json["kDistanceScalar"].empty()) {
+		kDistanceScalar = json["kDistanceScalar"].asInt();
+	}
+	if (!json["kNumberOfStepsScalar"].empty()) {
+		kNumberOfStepsScalar = json["kNumberOfStepsScalar"].asInt();
+	}
 }
