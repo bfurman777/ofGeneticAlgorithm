@@ -24,6 +24,7 @@ namespace geneticAlgorithm {
 		}
 		current_instruction_ = 0;
 		++generation_number_;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1777));
 		std::cout << "next generation time: " << generation_number_ << std::endl;
 		EvalInstructions();
 	}
@@ -40,7 +41,6 @@ namespace geneticAlgorithm {
 
 	std::vector<Point> Population::GetPointsAtNextFrame() {
 		if (current_instruction_ >= kNumberOfInstructions) {
-			std::cout << "next generation time" << std::endl;
 			NextGeneration();
 		}
 		std::vector<Point> next_points_to_show;
