@@ -314,6 +314,7 @@
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\dpoint.hpp" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle.h" />
     <ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
+    <ClInclude Include="src\constants.h" />
     <ClInclude Include="src\ofApp.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
