@@ -239,6 +239,7 @@
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Rope\b2Rope.cpp" />
     <ClCompile Include="..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp" />
+    <ClCompile Include="src\constants.cpp" />
     <ClCompile Include="src\main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>

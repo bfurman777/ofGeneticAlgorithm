@@ -181,6 +181,9 @@
     <ClCompile Include="test\test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\constants.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">

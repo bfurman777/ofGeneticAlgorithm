@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 #include "subject.h"
-#include "constants.h"
 
 #include <vector>
 

@@ -3,26 +3,25 @@
 #include "ofMain.h"
 
 namespace geneticAlgorithm {
-
 	// population constants
-	const int kNumberOfInstructions = 200;
-	const int kNumberOfSubjectsInPopulation = 111;
-	const int kMutationChance = 5;  // percent
+	extern int kNumberOfInstructions;
+	extern int kNumberOfSubjectsInPopulation;
+	extern int kMutationChance;  // percent
 
 	// positional constants
-	const int kStartingX = 80;
-	const int kStartingY = 240;
-	const int kGoalX = 560;
-	const int kGoalY = 240;
-	const int kSubjectRadius = 11;
+	extern int kStartingX;
+	extern int kStartingY;
+	extern int kGoalX;
+	extern int kGoalY;
+	extern int kSubjectRadius;
 
 	// instruction constants
-	const int kMinForce = 0;
-	const int kMaxForce = 20;
-	const int kMinAngle = 0;
-	const int kMaxAngle = 360;
+	extern int kMinForce;
+	extern int kMaxForce;
+	extern int kMinAngle;
+	extern int kMaxAngle;
 
 	// fitness constants
-	const float kDistanceScalar = 1.5;
-	const float kNumberOfStepsScalar = 10000;
+	extern float kDistanceScalar;
+	extern float kNumberOfStepsScalar;
 }
