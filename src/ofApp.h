@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "population.h"
 #include "subject.h"
+#include "ofxJSON.h"
 
 #include <iostream>
 #include <chrono>
