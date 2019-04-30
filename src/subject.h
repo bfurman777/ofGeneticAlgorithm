@@ -14,7 +14,7 @@ namespace geneticAlgorithm {
 	const int kGoalX = 560;
 	const int kGoalY = 240;
 	const int kNumberOfInstructions = 200;
-	const int kNumberOfSubjectsInPopulation = 5;
+	const int kNumberOfSubjectsInPopulation = 111;
 	const int kMinForce = 0;
 	const int kMaxForce = 20;
 	const int kMinAngle = 0;
