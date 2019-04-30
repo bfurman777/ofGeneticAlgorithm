@@ -14,7 +14,7 @@ namespace geneticAlgorithm {
 	const int kGoalX = 560;
 	const int kGoalY = 240;
 	const int kNumberOfInstructions = 200;
-	const int kNumberOfSubjectsInPopulation = 77;
+	const int kNumberOfSubjectsInPopulation = 5;
 	const int kMinForce = 0;
 	const int kMaxForce = 20;
 	const int kMinAngle = 0;
@@ -56,11 +56,12 @@ namespace geneticAlgorithm {
 		std::vector<Point> evaluated_path_;
 		bool is_dead_;
 		bool reached_goal_;
-		int step_to_reach_goal_;
+		int steps_to_reach_goal_;
 
 	public:
 		Subject();  // create a random subject
-		Subject(std::vector<Subject> parents);  // combining the Instructions from some parents into a single subject, with a chance to mutate
+		Subject(std::vector<Subject> &parents);  // combining the Instructions from some parents into a single subject, with a chance to mutate
+		Subject(Subject &to_copy);
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
 		std::vector<Point> &EvalInstructions();  // get the path of the subject for this generation

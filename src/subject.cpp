@@ -8,16 +8,16 @@ namespace geneticAlgorithm {
 		instructions_ = std::vector<Instruction>(kNumberOfInstructions);
 		evaluated_path_ = std::vector<Point>();
 		current_position_ = Point();
-		step_to_reach_goal_ = 0;
+		steps_to_reach_goal_ = 0;
 	}
 
-	Subject::Subject(std::vector<Subject> parents) {
+	Subject::Subject(std::vector<Subject> &parents) {
 		is_dead_ = false;
 		reached_goal_ = false;
 		instructions_ = std::vector<Instruction>();
 		evaluated_path_ = std::vector<Point>();
 		current_position_ = Point();
-		step_to_reach_goal_ = 0;
+		steps_to_reach_goal_ = 0;
 
 		for (int i = 0; i < kNumberOfInstructions; ++i) {
 			// chose a random parent's instructions, or a small chance to randomize the instruction
@@ -27,6 +27,15 @@ namespace geneticAlgorithm {
 			int parent_chosen = rand() % parents.size();
 			instructions_.push_back(parents[parent_chosen].instructions_[i]);
 		}
+	}
+
+	Subject::Subject(Subject &to_copy) {
+		is_dead_ = to_copy.is_dead_;
+		reached_goal_ = to_copy.reached_goal_;
+		instructions_ = to_copy.instructions_;
+		evaluated_path_ = to_copy.evaluated_path_;
+		current_position_ = to_copy.current_position_;
+		steps_to_reach_goal_ = to_copy.steps_to_reach_goal_;
 	}
 
 	float Subject::DistanceToGoal() {
@@ -42,7 +51,7 @@ namespace geneticAlgorithm {
 		float fitness = 0;
 		fitness += 1 / DistanceToGoal();  // closer to goal = more steps
 		if (reached_goal_) {  // less steps = more score
-			fitness += 1 / step_to_reach_goal_;
+			fitness += 1 / steps_to_reach_goal_;
 		}
 		return fitness;
 	}
@@ -61,7 +70,7 @@ namespace geneticAlgorithm {
 			current_position_.x += deltaX;
 			current_position_.y += deltaY;
 			evaluated_path_.push_back(Point(current_position_));
-			++step_to_reach_goal_;
+			++steps_to_reach_goal_;
 			if (DistanceToGoal() < kSubjectRadius) {
 				reached_goal_ = true;
 			}
