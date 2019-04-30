@@ -61,7 +61,7 @@ namespace geneticAlgorithm {
 	public:
 		Subject();  // create a random subject
 		Subject(std::vector<Subject> &parents);  // combining the Instructions from some parents into a single subject, with a chance to mutate
-		Subject(Subject &to_copy);
+		Subject(const Subject &to_copy);
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
 		std::vector<Point> &EvalInstructions();  // get the path of the subject for this generation

@@ -30,6 +30,11 @@ void geneticAlgorithmRunner::draw() {
 	// dark blue circle representing fittest subject from last generation
 	ofSetColor(0, 0, 255);
 	ofDrawCircle(points_to_draw[0].x, points_to_draw[0].y, kSubjectRadius);
+
+	// red circle representing fittest subject from this generation
+	ofSetColor(255, 0, 0);
+	int i = population_.FittestSubjectIndex();
+	ofDrawCircle(points_to_draw[i].x, points_to_draw[i].y, kSubjectRadius);
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {

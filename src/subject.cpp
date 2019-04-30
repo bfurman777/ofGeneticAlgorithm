@@ -29,7 +29,7 @@ namespace geneticAlgorithm {
 		}
 	}
 
-	Subject::Subject(Subject &to_copy) {
+	Subject::Subject(const Subject &to_copy) {
 		is_dead_ = to_copy.is_dead_;
 		reached_goal_ = to_copy.reached_goal_;
 		instructions_ = to_copy.instructions_;
@@ -57,6 +57,9 @@ namespace geneticAlgorithm {
 	}
 
 	std::vector<Point> &Subject::EvalInstructions() {
+		if (evaluated_path_.size() >= kNumberOfInstructions) {
+			return evaluated_path_;
+		}
 		for (Instruction instruction : instructions_) {
 			if (reached_goal_ || is_dead_) {
 				evaluated_path_.push_back(Point(current_position_));
