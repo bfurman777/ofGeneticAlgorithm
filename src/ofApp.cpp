@@ -5,7 +5,7 @@ using namespace geneticAlgorithm;
 void geneticAlgorithmRunner::setup() {
 	ofSetWindowTitle("Genetic Algorithm Simulator");
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
-	SetConstants(ParseJSON("basicObstacle.json"));
+	SetConstants(ParseJSON(ofSystemTextBoxDialog("JSON to load?")));
 	population_ = Population();
 	population_.EvalInstructions();
 }
