@@ -64,5 +64,9 @@ namespace geneticAlgorithm {
 	std::vector<Subject> &Population::GetSubjects() {
 		return subjects_;
 	}
+
+	int Population::GetPopulationNumber() {
+		return generation_number_;
+	}
 }
 

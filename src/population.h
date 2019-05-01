@@ -21,6 +21,7 @@ namespace geneticAlgorithm {
 		std::vector<Point> GetPointsAtNextFrame();  // between frames, get the next point to show for each subject
 		int FittestSubjectIndex();
 		std::vector<Subject> &GetSubjects();
+		int GetPopulationNumber();
 	};
 
 }

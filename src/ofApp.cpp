@@ -5,7 +5,7 @@ using namespace geneticAlgorithm;
 void geneticAlgorithmRunner::setup() {
 	ofSetWindowTitle("Genetic Algorithm Simulator");
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
-	SetConstants(ParseJSON("3BigGuys.json"));
+	SetConstants(ParseJSON("basicLevel.json"));
 	population_ = Population();
 	population_.EvalInstructions();
 }
@@ -28,6 +28,7 @@ void geneticAlgorithmRunner::draw() {
 	for (Point point : points_to_draw) {
 		ofDrawCircle(point.x, point.y, kSubjectRadius);
 	}
+
 	// dark blue circle representing fittest subject from last generation
 	ofSetColor(0, 0, 255);
 	ofDrawCircle(points_to_draw[0].x, points_to_draw[0].y, kSubjectRadius);
@@ -36,6 +37,11 @@ void geneticAlgorithmRunner::draw() {
 	ofSetColor(255, 0, 0);
 	int i = population_.FittestSubjectIndex();
 	ofDrawCircle(points_to_draw[i].x, points_to_draw[i].y, kSubjectRadius);
+
+	// text showing generation number
+	ofSetColor(0, 0, 0);
+	std::string generation_number = "Generation # " + std::to_string(population_.GetPopulationNumber());
+	ofDrawBitmapString(generation_number, kGenerationLabelOffset, kGenerationLabelOffset);
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {

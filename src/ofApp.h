@@ -13,6 +13,8 @@
 
 namespace geneticAlgorithm {
 
+	const int kGenerationLabelOffset = 20;
+
 	class geneticAlgorithmRunner : public ofBaseApp {
 	private:
 		Population population_;
