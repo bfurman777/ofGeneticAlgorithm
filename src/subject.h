@@ -10,6 +10,9 @@
 
 namespace geneticAlgorithm {
 
+	const float kDegreesToRadians = 3.14159 / 180.0;
+	const float kHitboxScalar = 2 / 3;  // scales the hitbox rectange inside of the circular subject
+
 	struct Point {
 		int x;
 		int y;
@@ -53,6 +56,7 @@ namespace geneticAlgorithm {
 		float DistanceToGoal();
 		float EvalFitness();  // calulate the fitness score, store it locally on this class object
 		std::vector<Point> &EvalInstructions();  // get the path of the subject for this generation
+		bool CollidedWithObstacle();  // check all obstacles for collisions
 		Point &GetPosition();
 		void SetPosition(const Point &point);
 		std::vector<Instruction> &GetInstructions();

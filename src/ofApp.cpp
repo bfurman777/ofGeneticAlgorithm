@@ -120,6 +120,4 @@ void geneticAlgorithmRunner::SetConstants(const ofxJSONElement &json) {
 		}
 		
 	}
-	
-	//kObstacles.push_back(ofRectangle(0, 0, 500, 500));
 }

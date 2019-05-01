@@ -69,7 +69,7 @@ namespace geneticAlgorithm {
 			}
 			int force = instruction.force;
 			int angle_degrees = instruction.angle;
-			float angle_radians = angle_degrees / 180.0 * 3.14159;
+			float angle_radians = angle_degrees * kDegreesToRadians;
 			float deltaX = force * std::cos(angle_radians);
 			float deltaY = force * std::sin(angle_radians);
 			current_position_.x += deltaX;
@@ -79,8 +79,27 @@ namespace geneticAlgorithm {
 			if (DistanceToGoal() < kSubjectRadius) {
 				reached_goal_ = true;
 			}
+			if (CollidedWithObstacle()) {
+				is_dead_ = true;
+			}
 		}
 		return evaluated_path_;
+	}
+
+	bool Subject::CollidedWithObstacle() {
+		ofRectangle hitbox = ofRectangle
+		(
+			current_position_.x - (kHitboxScalar / 2) * kSubjectRadius,
+			current_position_.y - (kHitboxScalar / 2) * kSubjectRadius,
+			kHitboxScalar * kSubjectRadius,
+			kHitboxScalar * kSubjectRadius
+		);
+		for (ofRectangle obstacle : kObstacles) {
+			if (hitbox.intersects(obstacle)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	Point &Subject::GetPosition() {
