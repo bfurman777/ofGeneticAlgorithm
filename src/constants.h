@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include <vector>
 
 namespace geneticAlgorithm {
 	// population constants
@@ -20,8 +21,11 @@ namespace geneticAlgorithm {
 	extern int kMaxForce;
 	extern int kMinAngle;
 	extern int kMaxAngle;
-
+	
 	// fitness constants
 	extern float kDistanceScalar;
 	extern float kNumberOfStepsScalar;
+
+	// obstacles
+	extern std::vector<ofRectangle> kObstacles;
 }

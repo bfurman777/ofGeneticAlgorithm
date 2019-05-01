@@ -5,9 +5,11 @@ using namespace geneticAlgorithm;
 void geneticAlgorithmRunner::setup() {
 	ofSetWindowTitle("Genetic Algorithm Simulator");
 	srand(static_cast<unsigned>(time(0))); // Seed random with current time
-	SetConstants(ParseJSON("basicLevel.json"));
+	SetConstants(ParseJSON("basicLevelWithBounds.json"));
 	population_ = Population();
 	population_.EvalInstructions();
+
+	std::cout << ofGetWindowWidth() << ", " << ofGetWindowHeight() << '\n';
 }
 
 void geneticAlgorithmRunner::update() {
@@ -22,6 +24,12 @@ void geneticAlgorithmRunner::draw() {
 	// green square representing the goal 
 	ofSetColor(0, 206, 79);
 	ofDrawRectangle(kGoalX - kSubjectRadius, kGoalY - kSubjectRadius, kSubjectRadius * 2, kSubjectRadius * 2);
+
+	// purple rectangles representing obstacles
+	ofSetColor(223, 55, 255);
+	for (ofRectangle obstacle : kObstacles) {
+		ofDrawRectangle(obstacle);
+	}
 
 	// blue circle representing each subject
 	ofSetColor(45, 126, 255);
@@ -51,7 +59,7 @@ void geneticAlgorithmRunner::keyPressed(int key) {
 ofxJSONElement geneticAlgorithmRunner::ParseJSON(std::string file) {
 	ofxJSONElement result;
 	if (result.open(file)) {
-		std::cout << result.getRawString() << std::endl;
+		//std::cout << result.getRawString() << std::endl;
 		return result;
 	} else {
 		return ofxJSONElement();
@@ -101,4 +109,21 @@ void geneticAlgorithmRunner::SetConstants(const ofxJSONElement &json) {
 	if (!json["kNumberOfStepsScalar"].empty()) {
 		kNumberOfStepsScalar = json["kNumberOfStepsScalar"].asInt();
 	}
+	if (!json["obstacles"].empty()) {
+		auto obstacles = json["obstacles"];
+		for (auto obstacle : obstacles) {
+			std::cout << obstacle << '\n';
+			kObstacles.push_back(
+				ofRectangle(
+					obstacle["x"].asInt(),
+					obstacle["y"].asInt(),
+					obstacle["width"].asInt(),
+					obstacle["height"].asInt()
+				)
+			);
+		}
+		
+	}
+	
+	//kObstacles.push_back(ofRectangle(0, 0, 500, 500));
 }

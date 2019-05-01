@@ -22,4 +22,7 @@ namespace geneticAlgorithm {
 	// fitness constants
 	float kDistanceScalar = 1.5;
 	float kNumberOfStepsScalar = 10000;
+
+	// obstacles
+	std::vector<ofRectangle> kObstacles = std::vector<ofRectangle>();
 }
