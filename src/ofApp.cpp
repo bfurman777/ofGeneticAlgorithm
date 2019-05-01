@@ -8,8 +8,6 @@ void geneticAlgorithmRunner::setup() {
 	SetConstants(ParseJSON("basicLevelWithBounds.json"));
 	population_ = Population();
 	population_.EvalInstructions();
-
-	std::cout << ofGetWindowWidth() << ", " << ofGetWindowHeight() << '\n';
 }
 
 void geneticAlgorithmRunner::update() {
@@ -46,7 +44,7 @@ void geneticAlgorithmRunner::draw() {
 	int i = population_.FittestSubjectIndex();
 	ofDrawCircle(points_to_draw[i].x, points_to_draw[i].y, kSubjectRadius);
 
-	// text showing generation number
+	// black text showing generation number
 	ofSetColor(0, 0, 0);
 	std::string generation_number = "Generation # " + std::to_string(population_.GetPopulationNumber());
 	ofDrawBitmapString(generation_number, kGenerationLabelOffset, kGenerationLabelOffset);
@@ -59,7 +57,6 @@ void geneticAlgorithmRunner::keyPressed(int key) {
 ofxJSONElement geneticAlgorithmRunner::ParseJSON(std::string file) {
 	ofxJSONElement result;
 	if (result.open(file)) {
-		//std::cout << result.getRawString() << std::endl;
 		return result;
 	} else {
 		return ofxJSONElement();
@@ -112,7 +109,6 @@ void geneticAlgorithmRunner::SetConstants(const ofxJSONElement &json) {
 	if (!json["obstacles"].empty()) {
 		auto obstacles = json["obstacles"];
 		for (auto obstacle : obstacles) {
-			std::cout << obstacle << '\n';
 			kObstacles.push_back(
 				ofRectangle(
 					obstacle["x"].asInt(),
