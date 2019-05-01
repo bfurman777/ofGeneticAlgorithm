@@ -55,6 +55,9 @@ namespace geneticAlgorithm {
 		else {
 			fitness += kDistanceScalar / DistanceToGoal();  // closer to goal = higher score
 		}
+		if (is_dead_) {
+			fitness /= kDeathDescalar;
+		}
 		return fitness;
 	}
 

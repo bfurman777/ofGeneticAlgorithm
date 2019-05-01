@@ -101,10 +101,13 @@ void geneticAlgorithmRunner::SetConstants(const ofxJSONElement &json) {
 		kMaxAngle = json["kMaxAngle"].asInt();
 	}
 	if (!json["kDistanceScalar"].empty()) {
-		kDistanceScalar = json["kDistanceScalar"].asInt();
+		kDistanceScalar = json["kDistanceScalar"].asFloat();
 	}
 	if (!json["kNumberOfStepsScalar"].empty()) {
-		kNumberOfStepsScalar = json["kNumberOfStepsScalar"].asInt();
+		kNumberOfStepsScalar = json["kNumberOfStepsScalar"].asFloat();
+	}
+	if (!json["kDeathDescalar"].empty()) {
+		kDeathDescalar = json["kDeathDescalar"].asFloat();
 	}
 	if (!json["obstacles"].empty()) {
 		auto obstacles = json["obstacles"];

@@ -25,6 +25,7 @@ namespace geneticAlgorithm {
 	// fitness constants
 	extern float kDistanceScalar;
 	extern float kNumberOfStepsScalar;
+	extern float kDeathDescalar;
 
 	// obstacles
 	extern std::vector<ofRectangle> kObstacles;
