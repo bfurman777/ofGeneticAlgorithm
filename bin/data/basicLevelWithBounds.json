@@ -1,0 +1,41 @@
+{
+	"kStartingX": 80,
+	"kStartingY": 240,
+	"kGoalX": 560,
+	"kGoalY": 240,
+	"kNumberOfInstructions": 500,
+	"kNumberOfSubjectsInPopulation": 77,
+	"kMinForce": 0,
+	"kMaxForce": 20,
+	"kMinAngle": 0,
+	"kMaxAngle": 360,
+	"kMutationChance": 0.05,
+	"kSubjectRadius": 11,
+	"kDeathDescalar": 2.5,
+	"obstacles": {
+		"upperbound": {
+			"x": -4000,
+			"y": -4000,
+			"width": 8000,
+			"height": 4002
+		},
+		"lowerbound": {
+			"x": -4000,
+			"y": 478,
+			"width": 8000,
+			"height": 4001
+		},
+		"leftbound": {
+			"x": -8000,
+			"y": -4000,
+			"width": 8002,
+			"height": 8000
+		},
+		"rightbound": {
+			"x": 638,
+			"y": -4000,
+			"width": 4002,
+			"height": 8000
+		}
+	}
+}
