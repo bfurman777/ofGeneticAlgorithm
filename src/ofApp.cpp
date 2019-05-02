@@ -8,6 +8,7 @@ void geneticAlgorithmRunner::setup() {
 	SetConstants(ParseJSON(ofSystemTextBoxDialog("JSON to load?")));
 	population_ = Population();
 	population_.EvalInstructions();
+	show_only_improvement_ = true;
 }
 
 void geneticAlgorithmRunner::update() {
@@ -15,6 +16,16 @@ void geneticAlgorithmRunner::update() {
 }
 
 void geneticAlgorithmRunner::draw() {
+	if (show_only_improvement_) {
+		if (!population_.HadImprovement()) {
+			ofSetColor(0, 0, 0);
+			std::string generation_text = "Searching for improvement...";
+			ofDrawBitmapString(generation_text, kGenerationLabelOffset, kGenerationLabelOffset);
+			population_.NextGeneration();
+			return;
+		}
+	}
+
 	// orange square representing the start 
 	ofSetColor(255, 173, 58);
 	ofDrawRectangle(kStartingX - kSubjectRadius, kStartingY - kSubjectRadius, kSubjectRadius * 2, kSubjectRadius * 2);
@@ -46,12 +57,21 @@ void geneticAlgorithmRunner::draw() {
 
 	// black text showing generation number
 	ofSetColor(0, 0, 0);
-	std::string generation_number = "Generation # " + std::to_string(population_.GetPopulationNumber());
-	ofDrawBitmapString(generation_number, kGenerationLabelOffset, kGenerationLabelOffset);
+	std::string generation_text = "Generation # " + std::to_string(population_.GetPopulationNumber());
+	if (show_only_improvement_) {
+		generation_text += "\nOnly showing improvements";
+	}
+	ofDrawBitmapString(generation_text, kGenerationLabelOffset, kGenerationLabelOffset);
 }
 
 void geneticAlgorithmRunner::keyPressed(int key) {
-	population_.NextGeneration();
+	if (key == ' ') {
+		population_.NextGeneration();
+	}
+	if (key == 'i') {
+		show_only_improvement_ = !show_only_improvement_;
+	}
+	
 }
 
 ofxJSONElement geneticAlgorithmRunner::ParseJSON(std::string file) {
