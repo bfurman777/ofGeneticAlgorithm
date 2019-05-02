@@ -25,6 +25,7 @@ namespace geneticAlgorithm {
 		int FittestSubjectIndex();
 		std::vector<Subject> &GetSubjects();
 		int GetPopulationNumber();
+		bool HadImprovement();
 	};
 
 }

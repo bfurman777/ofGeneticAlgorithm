@@ -99,5 +99,9 @@ namespace geneticAlgorithm {
 	int Population::GetPopulationNumber() {
 		return generation_number_;
 	}
+
+	bool Population::HadImprovement() {
+		return 0 != FittestSubjectIndex;  // 0 is the index of the previous subject carried over
+	}
 }
 
