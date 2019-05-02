@@ -25,6 +25,8 @@ There is a orange square representing the start and a green square representing 
 
 SPACE	-	Skips to the next generation
 
+i		-	Toggle show_only_improvement mode
+
 ## External Library
 
 This project uses ofxJSON to read JSON files. JSON files contain data all of the constants and obstacles, which can be used to run different simulations.
