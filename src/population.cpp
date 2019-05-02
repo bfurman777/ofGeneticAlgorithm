@@ -30,7 +30,6 @@ namespace geneticAlgorithm {
 		current_instruction_ = 0;
 		++generation_number_;
 		std::this_thread::sleep_for(std::chrono::milliseconds(77));
-		std::cout << "Next Generation: " << generation_number_ << std::endl;
 		EvalInstructions();
 	}
 
@@ -46,14 +45,8 @@ namespace geneticAlgorithm {
 		float fitness_sum = 0;
 		for (Subject& subject : subjects_) {
 			fitness_sum += subject.EvalFitness();
-			//std::cout << fitness_sum << ", ";
 			scaled_fitness_choice_vector_.push_back(fitness_sum);
 		}
-		std::cout << "\n\n";
-		for (float f : scaled_fitness_choice_vector_) {
-			//std::cout << f << ", ";
-		}
-		std::cout << "\n\n\n";
 		return scaled_fitness_choice_vector_;
 	}
 
@@ -101,7 +94,7 @@ namespace geneticAlgorithm {
 	}
 
 	bool Population::HadImprovement() {
-		return 0 != FittestSubjectIndex;  // 0 is the index of the previous subject carried over
+		return 0 != FittestSubjectIndex();  // 0 is the index of the previous subject carried over
 	}
 }
 
