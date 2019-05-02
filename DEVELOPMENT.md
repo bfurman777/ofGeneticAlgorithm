@@ -2,7 +2,8 @@
 
 |         |                                                              |
 | ------- | ------------------------------------------------------------ |
-|         |                                                              |
+| 5/1/19  | Added obstacle collisions that kill subjects. Re-evaluated fitness score calculations to discourage suicide amongst subjects. Added more JSON levels that also load in obstacles. Player can choose which JSON to load by typing in the file name of the JSON file. |
+| 4/29/19 | Pulled out all constants into extern variables. Implemented ofxJSON library to load these variables from a JSON. Loading from a JSON updates these variables everywhere in the project. |
 | 4/28/19 | Refactored code to work with pre-processing. Now a Generation can be viewed quickly with a variable delay between frames. However, there is a memory access violation at the end of a generation, where I got stuck debugging. |
 
 **Week 2**
