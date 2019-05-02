@@ -73,6 +73,9 @@ void geneticAlgorithmRunner::SetConstants(const ofxJSONElement &json) {
 	if (!json["kMutationChance"].empty()) {
 		kMutationChance = json["kMutationChance"].asInt();
 	}
+	if (!json["kNumberOfParents"].empty()) {
+		kNumberOfParents = json["kNumberOfParents"].asInt();
+	}
 	if (!json["kStartingX"].empty()) {
 		kStartingX = json["kStartingX"].asInt();
 	}

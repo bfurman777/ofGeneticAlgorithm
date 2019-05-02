@@ -5,6 +5,7 @@ namespace geneticAlgorithm {
 	int kNumberOfInstructions = 200;
 	int kNumberOfSubjectsInPopulation = 111;
 	int kMutationChance = 5;  // percent
+	int kNumberOfParents = 1;
 
 	// positional constants
 	int kStartingX = 80;

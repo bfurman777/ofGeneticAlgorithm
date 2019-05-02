@@ -8,6 +8,7 @@ namespace geneticAlgorithm {
 	extern int kNumberOfInstructions;
 	extern int kNumberOfSubjectsInPopulation;
 	extern int kMutationChance;  // percent
+	extern int kNumberOfParents;
 
 	// positional constants
 	extern int kStartingX;
