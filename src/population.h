@@ -20,6 +20,7 @@ namespace geneticAlgorithm {
 		void NextGeneration();  // keep this fittestSubject in the first index of the next subjects_ vector, make new subjects by combining highly ranked subjects from this generation
 		void EvalInstructions();  // evaluate the instructions for this generation
 		std::vector<float> &EvalFitnesses();  // evaluate the fitness of all subjects, and build a scaled fitness choice vector
+		Subject &FindFitParent();  // find a random parent for a next generation subject using the scaled_fitness_choice_vector_
 		std::vector<Point> GetPointsAtNextFrame();  // between frames, get the next point to show for each subject
 		int FittestSubjectIndex();
 		std::vector<Subject> &GetSubjects();

@@ -22,7 +22,9 @@ namespace geneticAlgorithm {
 		subjects_.push_back(fittest_subject);
 		for (int i = 1; i < kNumberOfSubjectsInPopulation; ++i) {
 			std::vector<Subject> parents;
-			parents.push_back(fittest_subject);
+			for (int j = 0; j < kNumberOfParents; j++) {
+				parents.push_back(FindFitParent());
+			}
 			subjects_.push_back(Subject(parents));
 		}
 		current_instruction_ = 0;
@@ -52,6 +54,19 @@ namespace geneticAlgorithm {
 		}
 		std::cout << "\n\n\n";
 		return scaled_fitness_choice_vector_;
+	}
+
+	Subject &Population::FindFitParent() {
+		float fitness_sum = scaled_fitness_choice_vector_.back();
+		//random float from 0.0 to fitness_sum
+		float choice = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / fitness_sum));
+		for (int i = 0; i < scaled_fitness_choice_vector_.size(); ++i) {
+			// loop through the ranges
+			if (choice <= scaled_fitness_choice_vector_[i]) {
+				return subjects_[i];
+			}
+		}
+		return subjects_.back();  // this should never be reached
 	}
 
 	std::vector<Point> Population::GetPointsAtNextFrame() {
