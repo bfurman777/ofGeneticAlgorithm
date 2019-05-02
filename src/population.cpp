@@ -17,16 +17,16 @@ namespace geneticAlgorithm {
 
 	void Population::NextGeneration() {
 		Subject fittest_subject = Subject(subjects_[FittestSubjectIndex()]);
-		std::vector<Subject> old_subjects = subjects_;
-		subjects_ = std::vector<Subject>();
-		subjects_.push_back(fittest_subject);
+		std::vector<Subject> new_subjects = std::vector<Subject>();
+		new_subjects.push_back(fittest_subject);
 		for (int i = 1; i < kNumberOfSubjectsInPopulation; ++i) {
 			std::vector<Subject> parents;
 			for (int j = 0; j < kNumberOfParents; j++) {
 				parents.push_back(FindFitParent());
 			}
-			subjects_.push_back(Subject(parents));
+			new_subjects.push_back(Subject(parents));
 		}
+		subjects_ = new_subjects;
 		current_instruction_ = 0;
 		++generation_number_;
 		std::this_thread::sleep_for(std::chrono::milliseconds(77));
@@ -42,10 +42,11 @@ namespace geneticAlgorithm {
 	}
 
 	std::vector<float> &Population::EvalFitnesses() {
+		scaled_fitness_choice_vector_ = std::vector<float>();
 		float fitness_sum = 0;
 		for (Subject& subject : subjects_) {
 			fitness_sum += subject.EvalFitness();
-			std::cout << fitness_sum << ", ";
+			//std::cout << fitness_sum << ", ";
 			scaled_fitness_choice_vector_.push_back(fitness_sum);
 		}
 		std::cout << "\n\n";
