@@ -30,13 +30,9 @@ namespace geneticAlgorithm {
 	}
 
 	void Population::EvalInstructions() {
-		if (current_instruction_ >= kNumberOfInstructions) {
-			return;
-		}
 		for (Subject& subject : subjects_) {
 			subject.EvalInstructions();
 		}
-		++current_instruction_;
 	}
 
 	std::vector<Point> Population::GetPointsAtNextFrame() {
