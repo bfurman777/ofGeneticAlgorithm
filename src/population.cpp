@@ -5,11 +5,14 @@ namespace geneticAlgorithm {
 		subjects_ = std::vector<Subject>(kNumberOfSubjectsInPopulation);
 		current_instruction_ = 0;
 		generation_number_ = 0;
+		scaled_fitness_choice_vector_ = std::vector<float>();
 	}
 
 	Population::Population(std::vector<Subject> new_subjects) {
 		subjects_ = new_subjects;
 		current_instruction_ = 0;
+		generation_number_ = 0;
+		scaled_fitness_choice_vector_ = std::vector<float>();
 	}
 
 	void Population::NextGeneration() {
@@ -25,7 +28,7 @@ namespace geneticAlgorithm {
 		current_instruction_ = 0;
 		++generation_number_;
 		std::this_thread::sleep_for(std::chrono::milliseconds(77));
-		std::cout << "next generation time: " << generation_number_ << std::endl;
+		std::cout << "Next Generation: " << generation_number_ << std::endl;
 		EvalInstructions();
 	}
 
@@ -33,6 +36,22 @@ namespace geneticAlgorithm {
 		for (Subject& subject : subjects_) {
 			subject.EvalInstructions();
 		}
+		EvalFitnesses();
+	}
+
+	std::vector<float> &Population::EvalFitnesses() {
+		float fitness_sum = 0;
+		for (Subject& subject : subjects_) {
+			fitness_sum += subject.EvalFitness();
+			std::cout << fitness_sum << ", ";
+			scaled_fitness_choice_vector_.push_back(fitness_sum);
+		}
+		std::cout << "\n\n";
+		for (float f : scaled_fitness_choice_vector_) {
+			//std::cout << f << ", ";
+		}
+		std::cout << "\n\n\n";
+		return scaled_fitness_choice_vector_;
 	}
 
 	std::vector<Point> Population::GetPointsAtNextFrame() {
