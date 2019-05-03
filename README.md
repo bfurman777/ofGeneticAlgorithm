@@ -5,9 +5,9 @@ My project is a simulation is one where a computer-controlled "subject" is a dot
 
 ## What happens in each Generation?
 
-Each generation starts with a starting point and a goal point. A pool of many different subjects are spawned on the starting point. Each subject has its "genes", which is a set of instructions. Each instruction is a number and a direction representing the applied force. For example, an instruction could be 50 Newtons in the Up direction. Initially, all subjects have random instructions.
+Each generation starts with a starting point and a goal point. A pool of many different subjects are spawned on the starting point. Each subject has its "genes", which is a set of instructions. Each instruction is a number and a direction representing the applied force. For example, an instruction could be 20 Newtons in the 45 degrees direction. Initially, all subjects have random instructions.
 
-A generation will consist of N frames. Each frame, every subject will apply its instruction upon itself. The subjects do not interact with eachother. After N frames, each subject will get a fitness score according to how well it performed, based on distance to the goal and number of frames taken to reach the goal. For example, a subject who finished 10 units away from the goal has a higher score than someone who finished 27 units away.  
+A generation will consist of N frames. Each frame, every subject will apply its instruction upon itself. The subjects do not interact with each other. After N frames, each subject will get a fitness score according to how well it performed, based on distance to the goal and number of frames taken to reach the goal. For example, a subject who finished 10 units away from the goal has a higher score than someone who finished 27 units away.  
 
 At the end of each generation, the best subjects have children. These children copy their parent's instructions, but have a small percent chance of randomly changing the instruction. These children are sent into the next generation of the simulation with the best subject of the old generation. After many generations, the subjects will become very good at the task.  
 
@@ -29,4 +29,4 @@ i		-	Toggle show_only_improvement mode
 
 ## External Library
 
-This project uses ofxJSON to read JSON files. JSON files contain data all of the constants and obstacles, which can be used to run different simulations.
+This project uses ofxJSON to read JSON files. JSON files contain data of all of the constants and obstacles, which can be used to run different simulations.
