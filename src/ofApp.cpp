@@ -8,7 +8,7 @@ void geneticAlgorithmRunner::setup() {
 	SetConstants(ParseJSON(ofSystemTextBoxDialog("JSON to load?")));
 	population_ = Population();
 	population_.EvalInstructions();
-	show_only_improvement_ = true;
+	show_only_improvement_ = false;
 }
 
 void geneticAlgorithmRunner::update() {
@@ -19,7 +19,8 @@ void geneticAlgorithmRunner::draw() {
 	if (show_only_improvement_) {
 		if (!population_.HadImprovement()) {
 			ofSetColor(0, 0, 0);
-			std::string generation_text = "Searching for improvement...";
+			std::string generation_text = "Generation # " + std::to_string(population_.GetPopulationNumber());
+			generation_text += "\nSearching for improvement...";
 			ofDrawBitmapString(generation_text, kGenerationLabelOffset, kGenerationLabelOffset);
 			population_.NextGeneration();
 			return;

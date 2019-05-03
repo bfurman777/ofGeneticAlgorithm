@@ -10,6 +10,7 @@
 	"kMinAngle": 0,
 	"kMaxAngle": 360,
 	"kMutationChance": 0.05,
+	"kNumberOfParents": 2,
 	"kSubjectRadius": 11,
 	"kDeathDescalar": 2.5,
 	"obstacles": {
