@@ -1,0 +1,14 @@
+{
+	"kStartingX": 80,
+	"kStartingY": 240,
+	"kGoalX": 560,
+	"kGoalY": 240,
+	"kNumberOfInstructions": 555,
+	"kNumberOfSubjectsInPopulation": 3,
+	"kMinForce": 0,
+	"kMaxForce": 20,
+	"kMinAngle": 0,
+	"kMaxAngle": 360,
+	"kMutationChance": 0.05,
+	"kSubjectRadius": 44
+}
