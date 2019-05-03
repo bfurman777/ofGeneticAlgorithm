@@ -29,7 +29,6 @@ namespace geneticAlgorithm {
 		subjects_ = new_subjects;
 		current_instruction_ = 0;
 		++generation_number_;
-		std::this_thread::sleep_for(std::chrono::milliseconds(77));
 		EvalInstructions();
 	}
 
